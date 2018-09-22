@@ -1,5 +1,5 @@
 # 개발환경
-
+* IDE : STS
 * SPRING 4.1.7 RELEASE 
 * HTML5, JS, Jquery
 * Mybatis 
@@ -17,3 +17,12 @@
 
 # ER-Diagram
 ![ER-Diagram](./image/ER-diagram.png)
+
+# 예시_이미지
+![회원가입](./image/signup.PNG)
+
+![최근 본 상품](./image/recently.png)
+
+![로그인](./image/login.PNG)
+
+![구매 상품 조회](./image/ad_prod.jpg)

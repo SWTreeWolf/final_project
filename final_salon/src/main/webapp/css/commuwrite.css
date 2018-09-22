@@ -1,0 +1,142 @@
+@charset "UTF-8";
+
+p {
+	margin: 0;
+}
+
+a {
+	color: black;
+	text-decoration: none;
+}
+
+ol, ul {
+	margin-top: 14px;
+}
+
+.commuwritewrap {
+	font-family: 'NanumSquare', sans-serif;
+	width: 1400px;
+	height: 1100px;
+	/* background-color: yellow; */
+	margin: 0 auto;
+	background-color: white;
+	border: 1px solid #ffd1bb;
+	border-radius: 10px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.space {
+	height: 20px;
+	/* background-color: aqua; */
+}
+
+#id {
+	float: right;
+	margin-right: 20px;
+	font-size: 17px;
+}
+
+.question {
+	margin-top: 35px;
+	height: 30px;
+	font-size: 20px;
+	margin-left: 50px;
+	font-weight: bold;
+}
+
+.space2 {
+	height: 30px;
+	/* background-color: aqua; */
+	border-bottom: 1px solid gray;
+}
+
+.commusub {
+	margin: 30px;
+	/* background-color: red; */
+	height: 30px;
+}
+
+.subbb {
+	height: 40px;
+	/* background-color:red; */
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 40px;
+}
+
+#flower {
+	color: #FE2E64;
+	font-weight: bold;
+}
+
+.imageee {
+	height: 100px;
+	/* background-color: yellow; */
+	text-align: center;
+	line-height: 100px;
+}
+
+.imageee>img {
+	cursor: pointer;
+	border: 1px solid gray;
+	width: 105;
+	height: 95px;
+	/* border: 3px solid black; */
+}
+
+.imageee>img:hover {
+	border: 2px solid #FE2E64;
+}
+
+.titleee {
+	line-height: 40px;
+	height: 40px;
+	/* background-color: red; */
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#sub {
+	width: 100%;
+	text-align: center;
+	height: 35px;
+	font-size: 17px;
+}
+
+.textboxx {
+	width: 500px; /*margin:0 auto로 정렬되게 하려면 정렬하려면 width값을 반드시 입력해야 한다.*/
+	background-color: yellow;
+	margin: 0 auto;
+}
+
+.conttentt {
+	line-height: 40px;
+	height: 40px;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.buttonn {
+	/* background-color:yellow; */
+	margin-left: 520px;
+}
+
+#cancel {
+	width: 150px;
+	height: 40px;
+	border: 1px solid gray;
+	color: gray;
+	background-color: white;
+}
+
+#community_write_btn, #community_update_btn {
+	width: 150px;
+	height: 40px;
+	border: none;
+	color: white;
+	background-color: #FA5882;
+	font-weight: bold;
+}

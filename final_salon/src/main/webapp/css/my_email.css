@@ -1,0 +1,90 @@
+#myemail-top {
+	position: relative;
+	left: 310px;
+	top: 60px;
+	height: 140px;
+}
+
+#myemail-top h1 {
+	font-size: 25px;
+}
+
+#myemail-count {
+	position: relative;
+	top: 13px;
+}
+
+.myemail-page {
+	position: relative;
+	text-align: center;
+	margin-top: 30px;
+	top: 30px;
+	left: 350px;
+}
+
+.myemail-page a {
+	float: left;
+}
+
+#myemail-table {
+	position: relative;
+	top: 30px;
+	width: 850px;
+	text-align: center;
+	border-bottom: 1px solid gainsboro;
+}
+
+#myemail-table th {
+	border-bottom: 1px solid gainsboro;
+	border-top: 1px solid pink;
+	height: 30px;
+}
+
+.mail_tr td {
+	height: 30px;
+	border-bottom: 1px dotted darkgrey !important;
+}
+
+.mail_tr td:nth-of-type(odd) {
+	
+}
+
+.mail_content {
+	height: 250px;
+	text-align: left;
+}
+
+#myemail-content .ad_page {
+	background: #a3b51b;
+	padding: 2px 7px;
+	color: white;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+#myemail-content .ad_page:hover {
+	background: #E91E63;
+}
+
+#myemail-content .nad_page {
+	background: #c3c3c3;
+	padding: 2px 7px;
+	color: white;
+	text-decoration: none;
+	margin-right: 8px;
+}
+
+#myemail-content .forward, .back, #myemail-content .forwrad:link,
+	#myemail-content .back:link {
+	font-size: 30px;
+	text-decoration: none;
+	color: #03A9F4;
+}
+
+#myemail-content .nforward, #myemail-content .nback, #myemail-content .nforwrad:link,
+	#myemail-content .nback:link {
+	font-size: 30px;
+	text-decoration: none;
+	color: #d0cfcf;
+	margin-right: 5px;
+}

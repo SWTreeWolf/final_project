@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="mypage">
+
+
+	<select id="reviewList" resultType="dto.ReviewDTO"
+		parameterType="dto.ReviewDTO">
+		<![CDATA[
+			select b.* from
+		(select rownum as rm, a.* from(select review_num, id,chk,review_content,rate,sub, (select goods_name ||'-'|| r.goods_option 
+from product where goods_code=r.goods_code) as goods_option from review r where r.id=#{id} order by Chk desc)a)b 
+	  	where b.rm >= #{pagedto.startRow} and b.rm<= #{pagedto.endRow}]]>
+	</select>
+
+	<select id="reviewCount" resultType="int" parameterType="String">
+		select
+		count(*) from review where id=#{id}
+	</select>
+
+	<select id="commuList" resultType="dto.CommuDTO"
+		parameterType="dto.CommuDTO">
+	<![CDATA[
+			select b.* from
+		(select rownum as rm, a.* from(select * from community where id=#{id} order by regdate desc)a)b 
+	  	where b.rm >= #{pagedto.startRow} and b.rm<= #{pagedto.endRow}]]>
+
+	</select>
+	<select id="commuCount" resultType="int" parameterType="String">
+		select count(*) from community where id=#{id}
+	</select>
+
+
+	<select id="emailList" resultType="dto.EmailDTO"
+		parameterType="hashMap">
+	<![CDATA[
+			select b.* from
+		(select rownum as rm, a.* from(select * from email where id=#{id} order by e_date desc)a)b 
+	  	where b.rm >= #{startRow} and b.rm<= #{endRow}]]>
+	</select>
+
+
+	<!-- 나의 주문배송 -->
+	<select id="orderList" resultType="dto.PayDTO" parameterType="dto.PayDTO">
+		<![CDATA[	  	
+		select b.* from(select rownum as rm,a.*,(select count(*) from pay  where pay_num=a.pay_num group by pay_num)pay_total_count from		
+		(select distinct pay_num,total_price,id,rec_name,rec_phone,zipcode,addr1,addr2,TO_CHAR(pay_date,'YYYY-MM-DD')as pay_datet,pay_state,order_name
+		from pay where id=#{id} order by pay_num)a)b
+		where b.rm >= #{pagedto.startRow} and b.rm<= #{pagedto.endRow}]]>	
+	<!-- <![CDATA[
+		select b.* from
+		(select rownum as rm, a.* from(
+		select b.* from (select rownum r,a.* from (select pp.*,(select count(*) from pay  where pay_num=pp.pay_num group by pay_num)pay_total_count  from pay pp,product pro where pp.goods_code=pro.goods_code)a)b 
+		where r in (select max(b.r) from (select rownum r,a.* from (select * from pay)a)b group by pay_num ) and id=#{id}
+		)a)b 
+	  	where b.rm >= #{pagedto.startRow} and b.rm<= #{pagedto.endRow}
+	  	]]> -->
+	</select>
+
+	<select id="orderListCount" resultType="int" parameterType="String">
+	<!-- 	select count(*) from (select rownum r,a.* from (select * from pay)a)b where
+		r in (select max(b.r) from (select rownum r,a.* from (select * from
+		pay)a)b group by pay_num ) and id=#{id} -->
+		
+		select count(*) from		
+		(select distinct pay_num,total_price,id,rec_name,rec_phone,zipcode,addr1,addr2,TO_CHAR(pay_date,'YYYY-MM-DD')as pay_datet,pay_state,order_name
+		from pay where id=#{id} order by pay_num)a 
+	</select>
+
+	<select id="orderView" resultType="dto.PayDTO"
+		parameterType="int">
+		select distinct p.*,pic.goods_main,(select goods_color from options where
+		goods_code2=p.goods_code2) from pay p,picture pic,options opt where
+		p.goods_code=pic.goods_code and p.pay_num=#{pay_num}
+	</select>
+
+	<!-- 나의 주문배송 끝 -->
+
+	<!-- 메일 갯수 -->
+	<select id="emailCount" resultType="int" parameterType="String">
+		select count(*) from email where id=#{id}
+	</select>
+	
+	<!-- 수령완료 -->
+	<update id="deliveryChk" parameterType="int">
+		update pay set pay_state='배송완료' where pay_num=#{pay_num}
+	</update>
+	
+	<!-- 반품요청중 -->
+	<update id="returnChk" parameterType="int">
+		update pay set pay_state='반품요청중' where pay_num=#{pay_num}
+	</update>
+
+	 <!-- 장바구니 상품 갯수 -->
+   <select id="cartCount" resultType="int" parameterType="String">
+   select count(*) from cart where id=#{id}
+   </select>
+   <!-- 배송상태ㅇㅅㅇㅅㅇㅅㅇ -->
+   <select id="cart1" resultType="int" parameterType="String">
+   select count(*) from (select count(*) from pay where id=#{id} and pay_state='결제완료' group by pay_num )
+   </select>
+   <select id="cart2" resultType="int" parameterType="String">
+   select count(*) from (select count(*) from pay where id=#{id} and pay_state='배송중' group by pay_num )
+   </select>
+   <select id="cart3" resultType="int" parameterType="String">
+   select count(*) from (select count(*) from pay where id=#{id} and pay_state='배송완료' group by pay_num )
+   </select>
+   <select id="point" resultType="int" parameterType="String">
+   select point from members where id=#{id}
+   </select>
+
+
+	<!-- 마이페이지 메인끝 -->
+</mapper>

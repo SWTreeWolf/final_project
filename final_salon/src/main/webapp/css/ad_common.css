@@ -1,0 +1,63 @@
+html, body, h1, p {
+	margin: 0;
+	font-family: 'NanumSquare', sans-serif;
+}
+
+body{
+	width : 1880px;
+}
+
+#ad_header {
+	height: 70px;
+	width: 1880px;
+	background: #0088c5;
+	color: white;
+}
+
+#ad_header h1{
+	line-height: 65px;
+}
+
+#ad_header h1 img{
+    width: 45px;
+    height: 45px;
+    float: left;
+    margin: 10px 13px 10px 25px;
+}
+
+#ad_sideBar {
+	width: 250px;
+	height: 202vh;
+	background: #2b2929;
+	float: left;
+}
+
+#ad_sideBar ul {
+	position: relative;
+	margin-top: 100px;
+	list-style: none;
+	font-size: 20px;
+	text-align: center;
+	padding: 5px;
+}
+
+#ad_sideBar a:hover {
+	color: #00BCD4;
+	background: #212121;
+}
+
+#ad_sideBar li a {
+    text-decoration: none;
+    color: white;
+    height: 43px;
+    position: relative;
+    line-height: 50px;
+    display: block;
+    padding: 10px 0px 10px;
+}
+
+#ad_content {
+	float: left;
+	width: 1540px;
+	height: 1500px;
+}

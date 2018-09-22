@@ -1,0 +1,450 @@
+#container {
+    position: relative;
+     width: 100%;
+}
+
+ 
+body {
+    font-family: 'Noto', 'dotum', '돋움', 'verdana', 'sans-serif';
+    font-size: 14px;
+    color: #666;
+}
+
+#container .content {
+    position: relative; 
+    min-width: 1024px;
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 0 auto;
+}
+
+.myetdArea {
+    position: relative;
+    padding-bottom: 160px;
+    width: 1200px; 
+    overflow: hidden;
+}
+
+@media (max-width: 1210px)
+.myetdArea{
+    width: 100%;
+}
+
+
+.myetdArea .myetdCon {
+    position: relative;
+    margin-left : 30px;
+    width: 940px;
+}
+
+
+.myetdArea .mainTop.hello {
+  background-color: #f9c550;
+    position: relative;
+    z-index: 1;
+}
+
+.myetdArea .mainTop {
+    position: relative;
+    margin: 60px 0 30px;
+    height: 295px;
+}
+
+.myetdArea .mainTop .gradeBox.gradeBox_180320 {
+    width: 49.9%;
+}
+
+.myetdArea .mainTop .gradeBox {
+    padding: 90px 0 0 0;
+    width: 52%;
+    text-align: center;
+}
+
+.myetdArea .mainTop .gradeBox.gradeBox_180320 .boxTxt {
+    margin-bottom: 0;
+    padding: 0 30px;
+    font-size: 25px;
+    color: #fff;
+}
+
+.myetdArea .mainTop .gradeBox .button1 {
+    display: block;
+    margin-top: 25px;
+    text-align: center;
+}
+
+
+
+
+/*******************haveBox**********************************/
+.myetdArea .mainTop .haveBox {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 48%; 
+    height: 254px;
+    background: #fff;
+}
+
+.myetdArea .mainTop .haveBox ul {
+    margin: 0 10px; 
+    overflow: hidden;
+}
+
+ol, ul, li {
+    list-style: none;
+}
+
+
+.myetdArea .mainTop .haveBox ul li a {
+    padding: 105px 0;
+        font-size: 24px;
+} 
+
+.myetdArea .mainTop .haveBox ul li {
+    font-size: 13px;
+    font-weight: 600; 
+    color: #333;
+    text-align: center;
+} 
+
+.myetdArea .mainTop .haveBox .num {
+
+    color: #f54a7e;
+}
+
+ 
+ 
+ .lnbList ol li:hover{
+ border-bottom:1px solid hotpink;
+ color:hotpink !important;
+ 
+ }
+ 
+ 
+/*******************haveBox**********************************/
+
+
+/*******************main mid**********************************/
+
+
+.myetdArea .mainMid {
+    position: relative;
+    margin-bottom: 55px;
+    overflow: hidden;
+}
+
+/************************************/
+.myetdArea .mainMid .midL {
+    position: relative;
+    float: left;
+    margin-right: 2%;
+    width: 68%;
+height: 205px;
+    border: 1px solid #e5e5e5;
+    text-align: center;
+}
+
+.myetdArea .mainMid * {
+    box-sizing: border-box;
+}
+
+.myetdArea .mainMid .myProcess {
+    padding: 29px 0 42px;
+}
+
+.myetdArea .mainMid .myProcess .proTit {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 26px;
+}
+
+.myetdArea .mainMid .myProcess ul {
+    margin-top: 13px;
+    text-align: center;
+}
+
+.myetdArea .mainMid .myProcess ul li {
+    position: relative;
+    width: 18%;
+    display: inline-block;
+}
+
+.myetdArea .mainMid .myProcess .num {
+    font-family: 'Arial';
+    font-size: 30px;
+    font-weight: 700;
+    color: #999;
+}
+
+/****************************/
+
+
+
+
+.myetdArea .mainMid .midR {
+    float: right;
+    width: 30%;
+ height: 205px;
+    border: 1px solid #e5e5e5;
+}
+
+.myetdArea .mainMid .midList {
+    padding: 30px;
+}
+
+.myetdArea .mainMid .midList li {
+    line-height: 29px;
+    font-size: 14px;
+}
+.myetdArea .mainMid .midList .ea {
+    margin-left: 10px;
+    font-family: 'Arial';
+    font-weight: 700;
+    color: #f54a7e;
+}
+/****************************/
+
+.myetdArea .mainMid .midBtn {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    border-top: 1px solid #e5e5e5;
+}
+
+.myetdArea .mainMid .midBtn li {
+    float: left;
+    width: 25%;
+    height: 49px;
+    line-height: 49px;
+    border-left: 1px solid #e5e5e5;
+    background: #f5f5f5;
+}
+
+/************mainbot****************/
+ 
+.myetdArea .mainBot {
+    position: relative;
+}
+
+.myetdArea .mainBot .botTit {
+    font-size: 18px;
+    font-weight: 500; 
+    color: #333;
+}
+
+
+
+
+
+
+/*************lib*************/
+
+
+.myetdArea .lnb {
+    position: relative;
+    float: left;
+    width: auto;
+}
+
+@media (max-width: 1210px)
+.myetdArea .lnb {
+    padding-left: 20px;
+    width: 17%;
+}
+
+.myetdArea .lnb .lnbTit {
+    margin: 60px 0 26px 40px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+li {
+   /* display: list-item; */
+    text-align: -webkit-match-parent;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+div {
+    display: block;
+}
+
+
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strike, strong, sub, sup, tt, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, hr, section, article, aside, canvas, details, figure, figcaption, hgroup, menu, nav, output, summary, time, mark, audio, video, header, footer {
+    margin: 0;
+    padding: 0;
+}
+
+h2{
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+.myetdArea .lnb .lnbList li a {
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333; 
+    font-weight: bold;
+    
+}
+
+.myetdArea .lnb .lnbList li ol li {
+    margin: 0 10px;
+    display: block;
+}
+
+.myetdArea .lnb .lnbList li ol li a {
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+ 
+
+/*******************main mid**********************************/
+
+#my_menu{
+	float:left;
+	margin: 0 0 0 280px;
+}
+
+
+#my_section{
+    float: left;
+    margin: 0 0 100px 100px;
+}
+
+
+
+/* test */
+.myetdArea .lnb {
+    position: relative;
+    float: left;
+    width: auto;
+}
+
+@media (max-width: 1210px)
+.myetdArea .lnb {
+    padding-left: 20px;
+    width: 17%;
+}
+
+.lnb .lnbTit {
+    margin: 60px 0 26px 40px;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+li {
+   /* display: list-item; */
+    text-align: -webkit-match-parent;
+}
+
+a:-webkit-any-link {
+    cursor: pointer;
+}
+
+div {
+    display: block;
+}
+
+
+
+ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+}
+
+h2{
+    display: block;
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
+
+.lnb .lnbList li a {
+    line-height: 40px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #333; 
+    font-weight: bold;
+    
+}
+
+.lnb .lnbList li ol li {
+    margin: 0 10px;
+    display: block;
+}
+
+.lnb .lnbList li ol li a {
+    line-height: 26px;
+    font-size: 13px;
+    font-weight: 400;
+    display: inline-block;
+}
+
+
+
+
+
+
+#cursor {
+display: block;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 10px;
+    width: 80px;
+    height: 80px;
+    z-index: 1000;
+    text-align: center;
+}
+
+
+
+#cursorImg{
+	width:35px;
+	height:35px;
+
+}
+
+#mem_unlink{
+	width: 800px;
+    height: 200px;
+    margin-top: 100px;
+    /* line-height: 200px; */
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+ 

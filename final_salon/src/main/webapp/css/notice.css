@@ -1,0 +1,110 @@
+#content {
+    position: relative;
+    min-width: 1024px;
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 0 auto;
+} 
+
+#pageTitle{
+    padding: 60px 0 30px 0;
+    text-align: center;      
+}
+
+
+#h2_title {  
+    line-height: 100%;
+    font-size: 36px;
+    font-weight: 500 !important;
+    color: #222;
+    
+}
+
+#noticeTable{  
+    width: 100%;    
+}
+
+#table{
+	width:100%;
+	text-align: center;
+	border-spacing: 2px;   
+}
+
+
+ 
+#noticeTable thead th {
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+    letter-spacing: -0.5px;
+}
+
+
+
+#table thead {
+    border-top: 2px solid #f7a2ba;
+    border-bottom: 1px solid #ccc;
+    height: 40px;
+    line-height: 40px;
+} 
+
+  
+#page{  
+  margin-top: 10px;
+  margin-left:60px;   
+} 
+ 
+#pag {
+	padding-top:5px;  
+}
+     
+#page span a {
+    float: left;
+    padding-left: 7px;   
+    margin-right: 3px;
+}
+
+
+#table tbody tr:hover {   
+     background-color: #FFE8FF;      
+}
+
+#noregister {    
+    background-color: #f54a7e;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+  
+#table thead tr th{ 		 
+	text-align: center;
+} 
+
+
+#cstmTab22 {
+   background-color:#f54a7e; 	
+}
+
+#noti {        
+	color : #f7a2ba;
+	font-size: 40px;
+    margin-left: 515px;
+    text-align: center;
+    display: inline;
+}
+
+#noti_margin {
+	height: 90px;
+}
+
+
+#h2_title2{ 
+	font-size :50px;   
+    color: salmon; 
+}

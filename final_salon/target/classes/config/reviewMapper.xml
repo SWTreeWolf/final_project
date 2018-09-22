@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review">
+	<!-- Review_Num NUMBER NOT NULL,  글번호 
+	Goods_Code NUMBER NOT NULL,  상품코드 
+	Id VARCHAR2(20) NOT NULL,  아이디 
+	Read_Count NUMBER,  조회수 
+	Chk DATE,  날짜 
+	Review_Content VARCHAR2(500),  내용 
+	Rate NUMBER  평가 
+	Goods_Name VARCHAR2(50) NOT NULL
+	sub VARCHAR2(50) 제목 -->
+    <select id="list" resultType="dto.ReviewDTO" parameterType="hashmap">
+        <!-- select * from review where goods_code = #{goods_code} -->
+        <![CDATA[
+      select b.* from
+      (select rownum as rm, a.* from(select * from review   
+      ]]>
+      <if test="code != null">
+      <where>
+         goods_code = #{code}
+      </where>
+      </if>
+      order by Chk desc)a)b
+      <where>
+         <![CDATA[
+          and b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+      </where>
+    </select>
+    
+    <select id="content" parameterType="int" resultType="dto.ReviewDTO">
+		select *
+		from review
+		where review_num=#{review_num}
+	</select>
+	
+	<insert id="insert" parameterType="dto.ReviewDTO"> <!-- 리턴해주는게 없우니까 리절트타입 없어도됌 -->
+	   insert into review(review_num,goods_code,id,nickname,chk,review_content,rate,goods_option,sub) 
+	   values(review_seq.nextval,#{goods_code},#{id},#{nickname},sysdate,#{review_content},#{rate},#{goods_option},#{sub})
+	</insert>
+	
+	<!-- 게시글 전체수를 가지고 온다. -->
+	<select id="count" parameterType="int" resultType="int">
+		select count(*) from review where goods_code = #{goods_code}
+	</select>
+	
+	
+	<delete parameterType="hashmap" id="rev_delete">
+	delete from review where review_num=#{review_num} and goods_code = #{goods_code} 
+	</delete>
+
+	<update parameterType="dto.ReviewDTO" id="rev_update">
+	update review set chk=sysdate,rate=#{rate},review_content=#{review_content},goods_option=#{goods_option},sub=#{sub}where review_num = #{review_num} 
+	</update>
+</mapper>

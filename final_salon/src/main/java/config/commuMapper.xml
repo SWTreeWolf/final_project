@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="commu">
+
+    <select id="toplist" resultType="dto.CommuDTO">
+        <![CDATA[select * from (select c.*,(select count(*) from commureply where commuNum=c.commuNum)as 
+        replycnt from community c order by commuNum desc) where rownum <= 3]]>
+    </select>
+    
+    <!-- #{commuNum}는 dao에서 넘어오는 파라미터값이름과 같아야함. -->
+    <!-- 리플갯수 같이나오게 -->
+    <select id="listnum" parameterType="int" resultType="dto.CommuDTO">
+       select c.*,(select count(*) from commureply where commuNum=c.commuNum)as replycnt from community c where commuNum=#{commuNum}
+    </select>
+
+    <insert id="insert" parameterType="dto.CommuDTO">
+      insert into community(commuNum,nickname,id,email,regdate,category,subject,content) 
+      values(commu_rno_seq.nextval,#{nickname},#{id},#{email},sysdate,#{category},#{subject},#{content})
+    </insert>
+    
+    <select id="list" resultType="dto.CommuDTO" parameterType="dto.PageDTO">
+         <![CDATA[select b.* from 
+	     (select rownum as rm, a.* from
+	     (select c.*,(select count(*) from commureply where commuNum=c.commuNum)as 
+         replycnt from community c order by commuNum desc)a)b 
+	     where b.rm>=#{startRow} and b.rm<=#{endRow}]]>
+	     
+    </select>
+    
+    <delete id="delete" parameterType="int">
+       delete from community where commuNum=#{commuNum}
+    </delete>
+    
+    <select id="replycnt" parameterType="int" resultType="int">
+       select count(*) from commureply where commuNum = #{commuNum}
+    </select>
+    
+    <update id="readcnt" parameterType="int">
+       update community set readcount = readcount+1 where commuNum = #{commuNum}
+    </update>
+    
+    <select id="recordcount" resultType="int">
+        select count(*) from community
+    </select>
+    
+    <select id="">
+       select * from community 
+       where subject like '%민%' or content like '%민%';
+    </select>
+    
+    <update id="update" parameterType="dto.CommuDTO">
+       update community set subject=#{subject}, content=#{content}, nickname=#{nickname}, category=#{category}
+       where commuNum=#{commuNum}
+    </update>
+    
+    <select id="searchlist" parameterType="String" resultType="dto.CommuDTO">
+       select * from community
+       where lower(subject) like '%' ||
+             lower(#{subject}) || '%'
+             or
+             lower(content) like '%' ||
+             lower(#{subject}) || '%'
+             or
+             lower(nickname) like '%' ||
+             lower(#{subject}) || '%'
+    </select>
+    
+    <select id="searchCnt" parameterType="String" resultType="int">
+       select count(*) from (      
+       select * from community
+       where lower(subject) like '%' ||
+             lower(#{subject}) || '%'
+             or
+             lower(content) like '%' ||
+             lower(#{subject}) || '%'
+             or
+             lower(nickname) like '%' ||
+             lower(#{subject}) || '%')
+    </select>
+    
+    <select id="skin" resultType="dto.CommuDTO" parameterType="dto.PageDTO">
+     
+      <![CDATA[select b.* from 
+         (select rownum as rm, a.* from
+	     (select c.*,(select count(*) from commureply where commuNum=c.commuNum)as 
+         replycnt from community c where category='피부고민' order by commuNum desc) a)b 
+	      where b.rm>=#{startRow} and b.rm<=#{endRow}]]>
+	     order by commuNum desc
+<!--       
+      select * from community
+      where category = '피부고민'
+      order by commuNum desc -->
+    </select>
+    
+    <select id="makeUp" resultType="dto.CommuDTO" parameterType="dto.PageDTO">
+    	<![CDATA[select b.* from 
+    	 (select rownum as rm, a.* from
+	     (select c.*,(select count(*) from commureply where commuNum=c.commuNum)as 
+         replycnt from community c where category='메이크업' order by commuNum desc) a)b 
+	      where b.rm>=#{startRow} and b.rm<=#{endRow}]]>
+	     order by commuNum desc
+    
+      <!-- select * from community
+      where category = '메이크업'
+      order by commuNum desc -->
+    </select>
+    
+    <select id="product" resultType="dto.CommuDTO" parameterType="dto.PageDTO">
+    <![CDATA[select b.* from 
+         (select rownum as rm, a.* from
+	     (select c.*,(select count(*) from commureply where commuNum=c.commuNum)as 
+         replycnt from community c where category='제품정보' order by commuNum desc) a)b 
+	      where b.rm>=#{startRow} and b.rm<=#{endRow}]]>
+	     order by commuNum desc
+      
+      <!-- select * from community
+      where category = '제품정보'
+      order by commuNum desc -->
+    </select>
+    
+    <select id="etc" resultType="dto.CommuDTO" parameterType="dto.PageDTO">
+      <![CDATA[select b.* from 
+      	 (select rownum as rm, a.* from
+	     (select c.*,(select count(*) from commureply where commuNum=c.commuNum)as 
+         replycnt from community c where category='기타' order by commuNum desc) a)b 
+	      where b.rm>=#{startRow} and b.rm<=#{endRow}]]>
+	     order by commuNum desc
+      
+      <!-- select * from community
+      where category = '기타'
+      order by commuNum desc -->
+    </select>
+    
+    <select id="skincnt" resultType="int">
+       select count(*) from(            
+       select * from community
+       where category = '피부고민')
+    </select>
+    
+    <select id="makeupcnt" resultType="int">
+       select count(*) from(            
+       select * from community
+       where category = '메이크업')
+    </select>
+    
+    <select id="productcnt" resultType="int">
+       select count(*) from(            
+       select * from community
+       where category = '제품정보')
+    </select>
+    
+    <select id="etccnt" resultType="int">
+       select count(*) from(            
+       select * from community
+       where category = '기타')
+    </select>
+    
+	
+</mapper>

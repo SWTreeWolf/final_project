@@ -1,0 +1,232 @@
+@charset "UTF-8";
+
+#container {
+	font-size: 14px;
+	color: #666;
+}
+
+#pageTitleWrap {
+	padding: 20px 0 20px 0;
+	text-align: center;
+}
+
+#cstmBtn ul {
+	
+}
+
+#h4_title {
+	padding: 10px 0 25px 20px;
+}
+
+#q {
+	border: 1px solid #ddd;
+	width: 25%;
+	text-align: center;
+}
+
+#cstmBtn ul li:first-child {
+	border-left: 1px solid #ddd;
+}
+
+#cstmBtn ul li {
+	float: left;
+	width: 33%;
+	height: 50px;
+	border: 1px solid #ddd;
+	border-left: 0px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+#cstmBtn ul li a {
+	display: block;
+	font-size: 30px;
+	font-weight: 500;
+	color: #333;
+	text-align: center;
+	background-repeat: no-repeat;
+	background-position: center 40px;
+}
+
+#cstmBtn ul li img {
+	margin-left: 105px;
+	margin-top: 40px;
+}
+
+form.example input[type=text] {
+	padding: 10px;
+	font-size: 17px;
+	border: 1px solid grey;
+	float: left;
+	width: 80%;
+	background: #f1f1f1;
+	width: 150px;
+	box-sizing: border-box;
+}
+
+form.example button {
+	float: left;
+	width: 20%;
+	padding: 10px;
+	background: #2196F3;
+	color: white;
+	font-size: 17px;
+	border: 1px solid grey;
+	border-left: none;
+	cursor: pointer;
+	width: 100px;
+	box-sizing: border-box;
+}
+
+form.example button:hover {
+	background: #0b7dda;
+}
+
+#example {
+	float: right;
+	width: 300px;
+}
+
+#list {
+	display: inline-block;
+	color: #f7a2ba;
+	font-size: 40px;
+	text-align: center;
+}
+
+#register {
+	margin-left: 30px;
+}
+
+#fnqTitle {
+	margin-top: 50px;
+	border-top: 2px solid #f7a2ba;
+	border-bottom: 1px solid #ccc;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	font-size: 14px;
+	color: #666;
+}
+
+#numQ {
+	float: left;
+	width: 8%;
+}
+
+#type {
+	float: left;
+	width: 15%;
+}
+
+#title {
+	float: left;
+	width: 73%;
+}
+
+#customerCenter {
+	position: relative;
+	min-width: 1024px;
+	max-width: 1200px;
+	min-height: 400px;
+	margin: 0 auto;
+}
+
+#fnqCon {
+	margin-bottom: 40px;
+	margin-top: 0px;
+}
+
+#fnqCon li {
+	position: relative;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+#fnqCon li:hover {
+	background-color: #FFE8FF;
+}
+
+#fnqCon .questType {
+	position: absolute;
+	top: 0;
+	left: 7%;
+	width: 17%;
+	padding: 15px 0;
+	text-align: center;
+}
+
+#fnqCon .questTit {
+	padding: 15px 0 15px 26.5%;
+}
+
+#fnqCon .questNum {
+	border: 0px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 8%;
+	padding: 15px 0;
+	text-align: center;
+	color: #999;
+}
+
+#fnqCon .pull_down_con {
+	position: relative;
+	background: #fdf5f7;
+	padding: 20px 50px 30px 19%;
+	display: none;
+}
+
+#fnqCon .questTit pull_down_button a {
+	text-align: center;
+}
+
+#page {
+	padding-left: 515px;
+	padding-bottom: 50px;
+}
+
+#customerCenter span a {
+	float: left;
+	padding-left: 50px;
+	margin-right: 3px
+}
+
+#pag {
+	padding-top: 5px;
+}
+
+#table tbody tr {
+	border-bottom: 1px solid #ccc;
+	height: 50px;
+	line-height: 50px;
+}
+
+#cstmBtn ul li:hover {
+	background-color: #f54a7e;
+}
+
+#register {
+	background-color: #f54a7e;
+	border: none;
+	color: white;
+	padding: 12px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+#cstmTab1 {
+	background-color: #f54a7e;
+}
+
+#h2_title {
+	font-size: 50px;
+	color: salmon;
+}

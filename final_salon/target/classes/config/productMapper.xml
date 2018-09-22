@@ -1,0 +1,523 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="product">
+
+	<!-- 리스트 받아오기 -->
+	<select id="list" parameterType="hashmap"
+		resultType="dto.ProductDTO">
+      <![CDATA[
+      select b.* from
+      (select rownum as rm, a.* from(select * from product   
+      ]]>
+		<if test="cdto.goods_group1 != null">
+			<where>
+				goods_group1 like '%' || #{cdto.goods_group1} || '%'
+				<if test="cdto.goods_group2 != null">
+					and goods_group2 like '%' || #{cdto.goods_group2} || '%'
+				</if>
+			</where>
+		</if>
+		order by goods_code)a)b
+		<where>
+         <![CDATA[
+          and b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+		</where>
+	</select>
+
+	<!-- 리스트 갯수 받아오기 -->
+	<select id="listcount" parameterType="dto.CateSearchDTO"
+		resultType="int">
+      <![CDATA[
+      select count(*) from product   
+      ]]>
+		<if test="goods_group1 != null">
+			<where>
+				goods_group1 like '%' || #{goods_group1} || '%'
+				<if test="goods_group2 != null">
+					and goods_group2 like '%' || #{goods_group2} || '%'
+				</if>
+			</where>
+		</if>
+	</select>
+
+	<select id="new_list" resultType="dto.ProductDTO">
+		select * from product order by
+		goods_code desc
+	</select>
+
+	<!-- 해당상품 상세페이지 -->
+	<select parameterType="int" resultType="dto.ProductDTO"
+		id="prod_detail">
+		select * from product where goods_code = #{code}
+	</select>
+
+	<!-- 해당상품 상세페이지(옵션테이블) -->
+	<select parameterType="int" resultType="dto.OptionsDTO"
+		id="options_detail">
+		select * from options where goods_code = #{code}
+	</select>
+
+	<!-- 해당상품 상세페이지(사진테이블) -->
+	<select parameterType="int" resultType="dto.PictureDTO"
+		id="picture_detail">
+		select * from picture where goods_code = #{code}
+	</select>
+
+	<!-- 리스트의 사진 받아오기 -->
+	<select id="piclist" parameterType="int"
+		resultType="dto.PictureDTO">
+		select * from picture where goods_code = #{code} order by
+		goods_code
+	</select>
+	<!-- 관리자페이지 -->
+
+
+	<!-- product -->
+
+
+	<!-- select갯수 -->
+
+
+	<select resultType="int" id="procount"> select count(*) from product
+	</select>
+
+	<!-- delete(상품삭제) -->
+	<delete parameterType="int" id="proDel">
+		delete from product where goods_code=#{goods_code}
+	</delete>
+
+	<!-- delete(옵션삭제) -->
+	<delete parameterType="int" id="optDel">
+		delete from options where goods_code=#{goods_code}
+	</delete>
+
+	<!-- delete(사진삭제) -->
+	<delete parameterType="int" id="picDel">
+		delete from picture where goods_code=#{goods_code}
+	</delete>
+
+	<!-- insert (상품등록) -->
+
+
+	<insert parameterType="dto.RegiDTO" id="proIns"> insert into product
+		values
+		(#{goods_code},#{goods_name},#{goods_price},#{goods_group1},#{goods_group2},#{goods_content},#{total_count},0)
+	</insert>
+
+	<!-- select -->
+
+
+
+	<select resultType="dto.RegiDTO" parameterType="dto.PageDTO"
+		id="proSel">
+
+<![CDATA[
+			select b.* from
+		(select rownum as rm, a.* from(	select pro.goods_code, pro.goods_name, pro.goods_price, pro.goods_group1,
+	pro.goods_group2, pro.goods_content, pro.total_count, pic.goods_main, pic.goods_detail from product pro,picture pic
+	 where pro.goods_code=pic.goods_code order by pro.goods_code desc)a)b 
+	  	where b.rm >= #{startRow} and b.rm<= #{endRow}]]>
+	</select>
+
+	<!-- select (검색) -->
+
+
+
+	<select resultType="dto.RegiDTO" parameterType="dto.RegiDTO"
+		id="searchSel">
+
+
+		<choose>
+
+			<when test="totalPage==0"> select count(*) as totalPage </when>
+
+			<otherwise> select b.* </otherwise>
+
+		</choose>
+		from (select rownum as rm, a.* from( select pro.goods_code,
+		pro.goods_name, pro.goods_price, pro.goods_group1, pro.goods_group2,
+		pro.goods_content, pro.total_count, pic.goods_main, pic.goods_detail
+		from product pro,picture pic where pro.goods_code=pic.goods_code order
+		by pro.goods_code)a
+
+		<where>
+
+			<if test="goods_group1!= ''"> goods_group1=#{goods_group1} </if>
+
+			<if test="goods_group2!= ''"> and goods_group2=#{goods_group2} </if>
+
+
+			<if test="total_count!= 0 ">
+
+<![CDATA[ and total_count<=#{total_count}]]>
+			</if>
+
+
+			<if test="search!= '' ">
+
+
+				<choose>
+
+					<when test="searchBy=='상품이름'"> and goods_name like '%' ||#{search}|| '%' </when>
+
+					<otherwise> and goods_code = #{search} </otherwise>
+
+				</choose>
+
+			</if>
+
+		</where>
+		)b
+
+		<if test="startRow!=0">
+
+<![CDATA[where b.rm >= #{startRow} and b.rm<= #{endRow}]]>
+		</if>
+
+	</select>
+
+	<!-- select (상품상세정보) -->
+
+
+	<select resultType="dto.RegiDTO" parameterType="int"
+		id="proSelOne"> select pro.goods_code, pro.goods_name, pro.goods_price,pro.sel_count,
+		pro.goods_group1, pro.goods_group2, pro.goods_content,
+		pro.total_count, pic.goods_main, pic.goods_detail from product
+		pro,picture pic where pro.goods_code=pic.goods_code and pro.goods_code
+		= #{goods_code}
+	</select> 
+
+	<!-- update(상품상세정보 -수정) -->
+	
+	<update id="option_product_set" parameterType="dto.RegiDTO">
+		update product set goods_price = #{goods_price} where goods_code=#{goods_code}
+	</update>
+
+
+	<update parameterType="dto.RegiDTO" id="proUp">
+		update product set
+	 	total_count=#{total_count},
+		goods_price=#{goods_price}
+		where goods_code=#{goods_code}
+	</update>
+
+	<!-- picture -->
+
+
+	<!-- insert -->
+
+
+	<insert parameterType="dto.RegiDTO" id="picIns"> insert into picture
+		values (#{goods_code},#{goods_name},#{goods_main},#{goods_detail})
+	</insert>
+
+	<!-- options -->
+
+
+	<!-- update (상품상세정보 -수정 -->
+
+
+	<update parameterType="dto.RegiDTO" id="optUp"> update options set
+		goods_count=#{goods_count} where goods_code2=#{goods_code2}
+	</update>
+
+	<!-- insert -->
+
+
+	<insert parameterType="dto.OptDTO" id="optIns"> insert into options
+		values
+		(#{goods_code},#{goods_color},#{goods_count},code2_seq.nextval,#{goods_color_img},0)
+	</insert>
+
+	<!-- select (상품상세정보) -->
+
+	<select resultType="dto.OptDTO" parameterType="int" id="optSel"> select *
+		from options where goods_code=#{goods_code}
+	</select>
+	
+	<!-- 색깔삭제 -->
+	<delete parameterType="int" id="optDelColor">
+	delete from options where goods_code2=#{goods_code2}
+	</delete>
+	<!-- 관리자페이지끝 -->
+
+	<select resultType="int" id="maxcode">
+		select max(goods_code) from product
+	</select>
+
+	<!-- 낮은가격순 선택 리스트 -->
+
+
+
+	
+	<select resultType="dto.ProductDTO" parameterType="hashmap"
+		id="rowPrice">
+
+		<![CDATA[
+		select b.* from (select rownum rm, a.* from (select * from product ]]>
+
+		
+		<if test="cdto.goods_group1 != null">
+
+
+			
+			<where>
+				goods_group1 like '%' || #{cdto.goods_group1} || '%'
+				<if test="cdto.goods_group2 != null"> and goods_group2 like '%' || #{cdto.goods_group2} ||
+					'%' </if>
+
+			</where>
+
+		</if>
+
+		<![CDATA[
+		order by Goods_Price)a)b
+		]]>
+
+		
+		<where>
+
+			-<![CDATA[
+          and b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+		</where>
+
+	</select>
+
+	<!-- 높은가격순 선택 리스트 -->
+
+
+
+	
+	<select resultType="dto.ProductDTO" parameterType="hashmap"
+		id="highPrice">
+
+		<![CDATA[
+		select b.* from (select rownum rm, a.* from (select * from product ]]>
+
+		
+		<if test="cdto.goods_group1 != null">
+
+
+			
+			<where>
+				goods_group1 like '%' || #{cdto.goods_group1} || '%'
+				<if test="cdto.goods_group2 != null"> and goods_group2 like '%' || #{cdto.goods_group2} ||
+					'%' </if>
+
+			</where>
+
+		</if>
+
+		<![CDATA[
+		order by Goods_Price desc)a)b
+		]]>
+
+		
+		<where>
+
+			-<![CDATA[
+          and b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+		</where>
+
+	</select>
+
+	<!-- 신상품순 선택 리스트 -->
+
+	<select resultType="dto.ProductDTO" parameterType="hashmap"
+		id="newitem">
+
+		<![CDATA[
+		select b.* from (select rownum rm, a.* from (select * from product ]]>
+		
+		<if test="cdto.goods_group1 != null">
+			
+			<where>
+				goods_group1 like '%' || #{cdto.goods_group1} || '%'
+				<if test="cdto.goods_group2 != null"> and goods_group2 like '%' || #{cdto.goods_group2} ||
+					'%' </if>
+			</where>
+
+		</if>
+
+		<![CDATA[
+		order by Goods_Code desc)a)b
+		]]>
+
+		<where>
+			<![CDATA[
+          and b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+		</where>
+
+	</select>
+	
+	<!-- 옵션테스트 -->
+	<select id="option_count" parameterType="int" resultType="int">
+		select goods_count from options where goods_code2 = #{goods_code2}
+	</select>
+	
+	<!-- 색없는거 -->
+	<select id="no_color" parameterType="int" resultType="int">
+		select total_count from product where goods_code = #{goods_code}
+	</select>
+	
+	<select id="option_color" parameterType="int" resultType="dto.OptionsDTO">
+		select goods_color_img from options where goods_code = #{goods_code}
+	</select>
+	 
+	 
+	 	<!-- 리스트 받아오기 -->
+	<select id="highlist" parameterType="hashmap"
+		resultType="dto.ProductDTO">
+      <![CDATA[
+      select b.* from
+      (select rownum as rm, a.* from(select * from product   
+      ]]>
+		<if test="cdto.goods_group1 != null">
+			<where>
+				goods_group1 like '%' || #{cdto.goods_group1} || '%'
+				<if test="cdto.goods_group2 != null">
+					and goods_group2 like '%' || #{cdto.goods_group2} || '%'
+				</if>
+			</where>
+		</if>
+		order by goods_price desc)a)b
+		<where>
+         <![CDATA[
+          and b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+		</where>
+	</select>
+	
+	<select id="lowlist" parameterType="hashmap"
+		resultType="dto.ProductDTO">
+      <![CDATA[
+      select b.* from
+      (select rownum as rm, a.* from(select * from product   
+      ]]>
+		<if test="cdto.goods_group1 != null">
+			<where>
+				goods_group1 like '%' || #{cdto.goods_group1} || '%'
+				<if test="cdto.goods_group2 != null">
+					and goods_group2 like '%' || #{cdto.goods_group2} || '%'
+				</if>
+			</where>
+		</if>
+		order by goods_price asc)a)b
+		<where>
+         <![CDATA[
+          and b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+		</where>
+	</select>
+	 
+	<!-- 장바구니 -->
+   <insert id="cartIns" parameterType="dto.CartDTO">
+   insert into cart values(cart_seq.nextval,#{goods_code},#{goods_code2},#{goods_name},#{id},#{prod_count},#{goods_price})
+   </insert>
+   
+   <select id="cartSel" parameterType="string" resultType="dto.CartDTO">
+      select * from cart where id=#{id} order by goods_code desc
+      </select>
+   
+   <select id="optImgCount" parameterType="int" resultType="dto.CartDTO">
+   select goods_count,goods_color,goods_color_img from options where goods_code2=#{goods_code2}
+   </select>
+   
+   <select id="proImgCount" parameterType="int" resultType="dto.CartDTO">
+   select p.goods_main,pro.total_count from product pro,picture p where p.goods_code=pro.goods_code and pro.goods_code=#{goods_code}
+   </select> 
+   
+   <select id="cartChkCode" parameterType="dto.CartDTO" resultType="int">
+   select count(*) from cart where goods_code=#{goods_code} and id=#{id}
+   
+   
+   </select>
+   <select id="cartChkCode2" parameterType="dto.CartDTO" resultType="int">
+   select count(*) from cart where goods_code2=#{goods_code2} and id=#{id}
+   </select>
+
+   <update id="cartUpCode" parameterType="dto.CartDTO">
+   update cart set prod_count = prod_count+#{prod_count} where goods_code=#{goods_code} and id=#{id}
+   </update>
+   
+   <update id="cartUpCode2" parameterType="dto.CartDTO">
+   update cart set prod_count = prod_count+#{prod_count} where goods_code2=#{goods_code2} and id=#{id}
+   </update>
+   <!-- 수량 조절할때마다 -->
+   <update id="cartEditCount" parameterType="dto.CartDTO">
+   		update cart set prod_count = #{prod_count} where id=#{id} and cart_num=#{cart_num} 
+   </update>
+
+	<!-- 장바구니에서 상품삭제 -->
+   <delete id="cartDel" parameterType="dto.CartDTO">
+   		delete from cart where goods_code=#{goods_code} and id=#{id}
+   </delete> 
+
+   <!-- 개별삭제 -->
+   <delete id="opt_Del" parameterType="dto.CartDTO">
+   		delete from cart where cart_num=#{cart_num} and id=#{id}
+   </delete> 
+   <!-- 장바구니끝 --> 
+   <select id="cartView" parameterType="string" resultType="dto.cartViewDTO">
+   select distinct goods_code,goods_name,id,goods_price from cart where id=#{id}
+   </select>  
+   <select parameterType="dto.cartViewDTO" resultType="int" id="cartgoods_code2">
+		select goods_code2 from cart where id=#{id} and goods_code=#{goods_code}
+   </select>
+   
+   <select parameterType="dto.cartViewDTO" resultType="int" id="cartNumSel">
+		select cart_num from cart where id=#{id} and goods_code=#{goods_code}
+   </select> 
+   
+   <select parameterType="dto.cartViewDTO" resultType="int" id="cartprod_count">
+		select prod_count from cart where id=#{id} and goods_code=#{goods_code}
+   </select>
+	<!--  --> 
+	 <select parameterType="int" resultType="dto.OptionsDTO"
+		id="cartOptionView">
+		select * from options where goods_code2 = #{code} 
+	</select>
+	
+	<!-- 베스트 순서 -->
+	<select id="bestProduct" resultType="dto.ProductDTO">
+		select * from product order by sel_count desc
+	</select>
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

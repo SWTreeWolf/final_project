@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mem">
+	<insert id="salonInsMem" parameterType="dto.MemDTO">
+		<if test="password!=null"> insert into members
+			values(#{id},#{password},#{name},#{date_of_birth},#{nickname},#{gender},#{email},#{phone},0,'Bronze',sysdate,#{zipcode},#{addr1},#{addr2},#{mem_group},0)
+		</if>
+
+		<if test="password==null"> insert into
+			members(id,name,date_of_birth,nickname,gender,email,phone,point,mem_grade,join_date,zipcode,addr1,addr2,mem_group)
+			values(#{id},#{name},#{date_of_birth},#{nickname},#{gender},#{email},#{phone},0,'Bronze',sysdate,#{zipcode},#{addr1},#{addr2},#{mem_group})
+		</if>
+	</insert>
+
+	<select id="salonSelMem" parameterType="dto.MemDTO"
+		resultType="dto.MemDTO">
+		select * from members where id=#{id} and mem_group =#{mem_group}
+		<if test="password!=null"> and password=#{password} </if>
+
+	</select>
+
+	<select id="salonOverlapMem" parameterType="dto.MemDTO"
+		resultType="dto.MemDTO">
+		<if test="id!=null and nickname==null"> select * from members where id=#{id} </if>
+		<if test="id!=null and nickname!=null"> select * from members where nickname=#{nickname} </if>
+	</select>
+
+	<!-- api 로그인 -->
+	<select id="salonCompareMem" parameterType="hashmap"
+		resultType="dto.MemDTO">
+		select * from members where id=#{id} and mem_group=#{mem_group}
+	</select>
+
+	<!-- 회원 탈퇴 -->
+	<delete id="salonDeleteMem" parameterType="hashmap">
+		delete from members
+		where id=#{id} and mem_group=#{mem_group}
+	</delete>
+
+	<!-- 회원정보 변경 -->
+	<update id="salonUpdateMem" parameterType="dto.MemDTO">
+		<if test="zipcode!=null">
+			update members set
+			<if test="password!=null">password=#{password},</if>
+			nickname=#{nickname}, phone=#{phone}, zipcode=#{zipcode},
+			addr1=#{addr1}, addr2=#{addr2}, email=#{email}
+			where id=#{id} and mem_group=#{mem_group}
+		</if>
+		<if test="zipcode==null">
+			update members set password=#{password} where id=#{id} and
+			mem_group=#{mem_group}
+		</if>
+	</update>
+
+	<!-- 회원아이디 및 비밀번호 찾기 -->
+   <select parameterType="dto.MemDTO" id="salonReferenceMem"
+      resultType="dto.MemDTO">
+      select id,password
+      <if test="id!='' and id!=null">,mem_group</if>
+      from members where name=#{name} and email=#{email}
+      <if test="id!='' and id!=null"> and id=#{id}</if>
+   </select>
+
+	<update id="mem_tot_pirce" parameterType="dto.PayDTO">
+		update members set
+		buy_price = buy_price + #{total_price} where id=#{id}
+	</update>
+
+	<select id="mem_tot" parameterType="dto.PayDTO" resultType="int">
+		select buy_price from members where id = #{id}
+	</select>
+
+	<update id="mem_grade" parameterType="HashMap">
+		update members set
+		mem_grade = #{grade} where id=#{id}
+	</update>
+
+	<update id="add_point" parameterType="HashMap">
+		update members set point =
+		point + #{point} where id=#{id}
+	</update>
+
+	<!-- 회원탈퇴 비밀번호 확인 -->
+	<select id="saloncheckmem" parameterType="dto.MemDTO"
+		resultType="dto.MemDTO">
+		select password from members where id=#{id} and password=#{password}
+	</select>
+	
+	<!-- 포인트 가져오기 -->
+	<select id="mypoint" parameterType="String" resultType="int">
+		select point from members where id=#{id}
+	</select>
+	
+	<!-- 포인트 감소 -->	
+	<update id="point_decrease" parameterType="dto.MemDTO">
+		update members set point = point - #{point} where id = #{id}
+	</update>
+	
+	<!-- 관리자페이지 -->
+	<select id="memList" resultType="dto.MemDTO" parameterType="hashMap">
+	      <![CDATA[
+      select b.* from
+      (select rownum as rm, a.* from(select * from members 	
+	
+      ]]>
+	<if test="standard !='no'">
+	order by ${standard} desc
+	</if>
+	<if test="standard =='no'">
+		order by (
+     case mem_grade
+     when 'VIP' then 0 
+     when 'GOLD' then 1
+     when 'SILVER' then 2
+     when 'Bronze' then 3
+     end
+		) asc
+		</if>
+	
+         <![CDATA[
+         )a)b where b.rm >= #{pdto.startRow} and b.rm<= #{pdto.endRow}
+         ]]>
+	</select>
+	
+	<select id="memCount" resultType="int">
+	select count(*) from members
+	</select>
+	
+  <update id="addPoint" parameterType="dto.MemDTO">
+    <selectKey keyProperty="point" resultType="int" order="AFTER">
+    select point from members where id=#{id} 
+  </selectKey>
+  update members set point=point+#{point} where id=#{id} 
+  </update>
+</mapper>

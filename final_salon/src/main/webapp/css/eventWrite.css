@@ -1,0 +1,46 @@
+p {
+	margin: 0;
+}
+
+ol, ul {
+	margin-top: 14px;
+}
+
+a {
+	color: black;
+}
+
+.imgView {
+	width: 200px;
+	height: 200px;
+}
+
+.outputView {
+	width: 200px;
+	height: 200px;
+}
+
+#vname {
+	width: 500px;
+}
+
+#desia {
+	padding-top: 3px;
+	border-bottom: 3px solid #ffe8e8;
+	border-top: 3px solid #ffe8e8;
+	padding-bottom: 3px;
+	margin-bottom: 20px;
+}
+
+#desia1 {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+#evimgwrite {
+	margin-left: 230px;
+}
+
+#lee {
+	display: inline;
+}

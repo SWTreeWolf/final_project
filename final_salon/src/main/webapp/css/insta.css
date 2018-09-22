@@ -1,0 +1,80 @@
+#insta-wrapper {
+    width: 1500px;
+	margin: auto;
+	min-height:1500px;
+}
+
+#insta-top {
+	text-align: center;
+	height: 230px;
+	position: relative;
+	top: 20px;
+}
+
+#insta-icon {
+	position: relative;
+}
+
+#insta-icon img {
+	width: 100px;
+	height: 100px;
+}
+
+#insta-top h1 {
+	font-weight: 600;
+	font-size: 26px;
+}
+
+#insta-top h3 {
+	color: #b1b0b0;
+	font-weight: 300;
+	font-size: 17px;
+	margin-top: 13px;
+}
+
+#nemo-wrapper {
+	position: relative;
+	top: 30px;
+	left: 100px;
+}
+
+.nemorow {
+	width: 100%;
+	background-color: lightblue;
+}
+
+.nemo {
+    width: 295px;
+    height: 320px;
+    background-color: aliceblue;
+    float: left;
+    margin-right: 30px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+}
+
+.insta-temp {
+    width: 294px;
+    height: 330px;
+    border: 1px solid lightgrey;
+    position: absolute;
+    z-index: -1;
+    float: left;
+}
+.nemoimg {
+    position: relative;
+    left: 7px;
+    top: 43px;
+}
+
+.instaimg{
+	width: 280px;
+    height: 280px;
+}
+
+.nemorow:last-of-type .nemo:last-of-type{
+	    margin-bottom: 200px;
+}
+
+

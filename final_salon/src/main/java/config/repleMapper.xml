@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="reply">
+
+   <insert id="replyinsert" parameterType="dto.commureplyDTO">
+      insert into commureply(replyNum,commuNum,reply,replyWriter,reRegdate)
+      values(reply_reno_seq.nextval,#{commuNum},#{reply},#{replyWriter},sysdate) 
+   </insert>
+   
+   <select id="replylist" resultType="dto.commureplyDTO" parameterType="int">
+      select * from commureply where commuNum=#{commuNum}
+   </select>
+  
+	
+</mapper>

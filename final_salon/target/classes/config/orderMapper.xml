@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="order">
+	<select id="paynum" resultType="int">
+		select max(pay_num) from pay
+	</select>
+	<insert id="option_payAdd" parameterType="dto.PayDTO">
+		insert into pay
+		values(#{pay_num},#{prod_name},#{goods_code},#{goods_code2},#{goods_color},#{pay_count},#{goods_price},#{total_price},#{id},#{rec_name},#{rec_phone},#{zipcode},#{addr1},#{addr2},#{del_sub},sysdate,'결제완료',#{order_name})
+	</insert>
+	<insert id="no_option_payAdd" parameterType="dto.PayDTO">
+		insert into pay
+		values(#{pay_num},#{prod_name},#{goods_code},null,null,#{pay_count},#{goods_price},#{total_price},#{id},#{rec_name},#{rec_phone},#{zipcode},#{addr1},#{addr2},#{del_sub},sysdate,'결제완료',#{order_name})
+	</insert>
+	<delete id="cart_delete" parameterType="int">
+		delete from cart where
+		cart_num = #{cart_num}
+	</delete>
+
+	<update id="option_pay_del" parameterType="dto.PayDTO">
+		update options set
+		goods_count = goods_count-#{pay_count} where goods_code2 =
+		#{goods_code2}
+	</update>
+
+	<update id="pay_del" parameterType="dto.PayDTO">
+		update product set
+		total_count = total_count-#{pay_count} where goods_code =
+		#{goods_code}
+	</update>
+
+	<update id="option_paycount_up" parameterType="dto.PayDTO">
+		update options set
+		opt_sel_count = opt_sel_count+ #{pay_count} where goods_code2 =
+		#{goods_code2}
+	</update>
+
+	<update id="paycount_up" parameterType="dto.PayDTO">
+		update product set
+		sel_count = sel_count +#{pay_count} where goods_code = #{goods_code}
+	</update>
+
+	<!-- 엑셀 다운로드 처리 -->
+	<select resultType="dto.PayDTO" id="payrecord"
+		parameterType="hashmap">
+		<choose>
+			<when test="start_day=='' or end_day=='' or 
+			start_day==null or end_day==null">
+			select * from pay order by pay_num, pay_date asc </when>
+			<otherwise>
+				select * from pay 
+			 <![CDATA[
+	         where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+	         AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+	      	 ]]>order
+				by pay_num, pay_date asc
+			</otherwise>
+		</choose>
+	</select>
+
+	<!-- admin pay list -->
+	<select resultType="dto.PayDTO" id="payrecodelist"
+		parameterType="hashmap">
+		<choose>
+			<when test="start_day=='' or end_day=='' or 
+			start_day==null or end_day==null">
+			<![CDATA[
+	      	 select * from
+	      	 (select rownum as rm, a.* from(
+	      	  select * from pay
+	      	]]>
+			<choose>
+				<when test="id!='' and rec_name==''">
+				<![CDATA[
+	      	  		where id = #{id}
+	      	  		order by pay_num asc,pay_date asc )a)b
+	      	  		where b.rm >=#{startRow} and b.rm <= #{endRow}
+	      		]]>
+				</when>
+				<when test="rec_name!='' and id==''">
+				<![CDATA[
+		      	 	where rec_name = #{rec_name}
+		      	 	order by pay_num asc,pay_date asc )a)b
+		      	 	where b.rm >=#{startRow} and b.rm <= #{endRow}
+		      	]]>
+				</when>
+				<when test="id!='' and rec_name!=''">
+					<![CDATA[
+	      	  		where rec_name = #{rec_name} or id = #{id}
+	      	  		order by pay_num asc,pay_date asc )a)b
+	      	  		where b.rm >=#{startRow} and b.rm <= #{endRow}
+	      			]]>
+				</when>
+				<otherwise>
+				<![CDATA[
+			        order by pay_num asc,pay_date asc )a)b
+			        where b.rm >=#{startRow} and b.rm <= #{endRow}
+			    ]]>
+				</otherwise>
+			</choose>
+		</when>
+		<otherwise>
+		<![CDATA[
+	      	 select * from
+	      	 (select rownum as rm, a.* from(
+	      	  select * from pay
+	    ]]>
+	    <choose>
+			<when test="id!='' and rec_name==''">
+			<![CDATA[
+				where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+	          	AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+      	  		and id = #{id}
+      	  		order by pay_num asc,pay_date asc )a)b
+      	  		where b.rm >=#{startRow} and b.rm <= #{endRow}
+      		]]>
+			</when>
+			<when test="rec_name!='' and id==''">
+			<![CDATA[
+				where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+	          	AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+	      	 	and rec_name = #{rec_name}
+	      	 	order by pay_num asc,pay_date asc )a)b
+	      	 	where b.rm >=#{startRow} and b.rm <= #{endRow}
+	      	]]>
+			</when>
+			<when test="id!='' and rec_name!=''">
+				<![CDATA[
+       	  		where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+	          	AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+      	  		order by pay_num asc,pay_date asc )a
+      	  		where a.rec_name = #{rec_name} or a.id = #{id} )b
+      	  		where b.rm >=#{startRow} and b.rm <= #{endRow}
+      			]]>
+			</when>
+			<otherwise>
+			<![CDATA[
+				where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+	          	AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+		      	order by pay_num asc,pay_date asc )a)b
+		      	where b.rm >=#{startRow} and b.rm <= #{endRow}
+		    ]]>
+			</otherwise>
+		</choose>
+	</otherwise>
+	</choose>
+	</select>
+
+	<!-- admin pay 카운트 처리 -->
+	<select resultType="int" id="payrecordcount"
+		parameterType="hashmap">
+		<choose>
+			<when test="start_day=='' or end_day=='' or 
+			start_day==null or end_day==null">
+			<![CDATA[
+	      	 select count(*) from
+	      	 (select rownum as rm, a.* from(
+	      	  select * from pay
+	      	]]>
+			<choose>
+				<when test="id!='' and rec_name==''">
+					<![CDATA[
+			      	  where id = #{id}
+			      	  order by pay_num asc,pay_date asc )a)b
+			      	]]>
+				</when>
+				<when test="rec_name!='' and id==''">
+					<![CDATA[
+			      	 	where rec_name = #{rec_name}
+			      	 	order by pay_num asc,pay_date asc )a)b
+			      	]]>
+				</when>
+				<when test="id!='' and rec_name!=''">
+					<![CDATA[
+			      	 	where rec_name = #{rec_name} 
+			      	 	or id=#{id}
+			      	 	order by pay_num asc,pay_date asc )a)b
+			      	]]>
+				</when>
+				<otherwise>	
+					<![CDATA[
+		      			order by pay_num asc,pay_date asc )a)b
+		      		]]>
+				</otherwise>
+				</choose>
+			</when>
+			<otherwise>
+			<![CDATA[
+	      	 select count(*) from
+	      	 (select rownum as rm, a.* from(
+	      	  select * from pay
+	        ]]>				
+	        <choose>
+				<when test="id!='' and rec_name==''">
+				<![CDATA[
+					where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+		          	AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+	      	  		and id = #{id}
+	      	  		order by pay_num asc,pay_date asc )a)b
+	      		]]>
+				</when>
+				<when test="rec_name!='' and id==''">
+				<![CDATA[
+					where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+		          	AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+		      	 	and rec_name = #{rec_name}
+		      	 	order by pay_num asc,pay_date asc )a)b
+		      	]]>
+				</when>
+				<when test="id!='' and rec_name!=''">
+					<![CDATA[
+			      	 	where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+	          			and to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+			      	 	order by pay_num asc,pay_date asc )a
+			      	 	where a.rec_name = #{rec_name} or a.id = #{id} )b
+			      	]]>
+				</when>
+				<otherwise>
+					<![CDATA[
+						where to_char(pay_date,'yyyy-mm-dd') >= #{start_day}
+	          			AND to_char(pay_date,'yyyy-mm-dd') <= #{end_day}
+		      			order by pay_num asc,pay_date asc )a)b
+		      		]]>
+				</otherwise>
+			</choose>
+		</otherwise>
+		</choose>
+	</select>
+
+	<!-- 업데이트 처리 -->
+	<update id="payrecodeupdate" parameterType="hashmap">
+		<choose>
+			<when test="pay_state=='결제완료'">update pay set pay_state = '배송중' 
+			where pay_num = #{pay_num} and pay_state = #{pay_state} 
+			</when>
+		
+			<when test="pay_state=='결재완료'">update pay set pay_state = '배송중' 
+			where pay_num = #{pay_num} and pay_state = #{pay_state} 
+			</when>
+			
+			<when test="pay_state=='배송중'">update pay set pay_state = '결재완료' 
+			where pay_num = #{pay_num} and pay_state = #{pay_state} 
+			</when>
+
+			<when test="pay_state=='반품요청중'">
+				update pay set pay_state = '반품완료' where pay_num = #{pay_num}
+				and prod_name = #{prod_name}
+				<if test="goods_color!=null"> and goods_color = #{goods_color} </if>
+				and pay_state = #{pay_state}
+			</when>
+			<when test="pay_state=='반품완료'">
+				update pay set pay_state = '반품요청' where pay_num = #{pay_num} and
+				prod_name = #{prod_name}
+				<if test="goods_color!=null"> and goods_color = #{goods_color} </if>
+				and pay_state = #{pay_state}
+			</when>
+		</choose>
+	</update>
+</mapper>

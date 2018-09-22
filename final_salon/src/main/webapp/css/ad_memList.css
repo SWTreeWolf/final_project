@@ -1,0 +1,198 @@
+/*modal*/
+#pointModal {
+    display: none;
+    position: fixed; 
+    z-index: 1000; 
+    padding-top: 100px; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+/* Modal Content */
+#pointModal-content {
+width: 500px;
+    height: 300px;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+        z-index: 1000;
+    position: relative;
+    top:200px;
+}
+
+#pointModal-point{
+	position: relative;
+    top: 30px;
+    font-size: 20px;
+    left: 100px;
+    width: 350px;
+    height: 100px;
+}
+
+#pointModal-point p{
+	    margin-bottom: 20px;
+}
+
+#pointModal-ask {
+ margin-left: 145px;
+    font-size: 26px;
+    margin-top: 30px;
+    font-weight: 1000;
+}
+#pointModal_btn-wrapper {
+    position: relative;
+    top: 50px;
+    left: 180px;
+}
+#pointModal_btn{
+    display: inline-block;
+    width: 130px;
+    background: white;
+    height: 40px;
+    color: hotpink;
+    font-weight: 600;
+    border: 1px solid hotpink;
+    margin-right: 20px;
+    text-align: center;
+    line-height: 40px;
+}
+
+#pointModal_btn:hover{
+   background:hotpink;
+   color:white;
+}
+#pointModal-close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#pointModal-close:hover,
+#pointModal-close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* 모달 끝*/
+
+
+
+#ad_mList-standard{
+    position: relative;
+    /* left: 900px; */
+    top: -10px;
+}
+#ad_mList-standard a{
+	    color: grey;
+    margin-right: 14px;
+	}
+
+
+
+#ad_mList-content{
+    position: relative;
+    margin: 30px 0 0 40px;
+}
+
+
+
+
+#mList-top {
+    height: 60px;
+    border-bottom: 2px solid #cacdce;
+}
+#ad_mList-table{
+	position:relative;
+	top:100px;
+	    width: 1400px;
+}
+
+
+#ad_mList-table table{
+    text-align: center;
+border-top:2px solid pink;
+border-collapse:collapse;
+    width: 1400px;
+}
+
+#ad_mList-table table td{ 
+		border-bottom: 1px solid #cccccc;
+    padding: 15px 22px
+}
+#ad_mList-table table th{ 
+	border-bottom: 1px solid #cccccc;
+    padding: 15px 22px
+}
+	
+.add_point {
+    display: block;
+    border: 1px solid;
+    color: #03A9F4;
+    padding: 3px 5px;
+    margin-top: 5px;
+}	
+.add_point:hover{
+	color:white;
+	background:#03A9F4;
+}
+	
+
+/*페이지*/
+
+	
+#ad_mList-page{
+    position: relative;
+    text-align: center;
+    left: -30px;
+    top: 150px;
+}
+
+.ad_mList-ad_page {
+	background: #a3b51b;
+	padding: 2px 7px;
+	color: white;
+	text-decoration: none;
+	margin-right: 5px;
+}
+
+.ad_mList-ad_page:hover {
+	background: #E91E63;
+}
+
+.ad_mList-nad_page {
+	background: #c3c3c3;
+	padding: 2px 7px;
+	color: white;
+	text-decoration: none;
+	margin-right: 8px;
+}
+
+.ad_mList-forward, .ad_mList-back, .ad_mList-forwrad:link, .ad_mList-back:link {
+	font-size: 30px;
+	text-decoration: none;
+	color: #03A9F4;
+}
+
+.ad_mList-nforward, .ad_mList-nback, .ad_mList-nforwrad:link, .ad_mList-nback:link {
+	font-size: 30px;
+	text-decoration: none;
+	color: #d0cfcf;
+	margin-right: 5px;
+}	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	

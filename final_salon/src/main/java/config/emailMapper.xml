@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="email">
+   
+<insert id="insert" parameterType="dto.EmailDTO"> 
+  insert into email (e_num, e_mail, e_title, e_content, e_date, id) values (email_seq.nextval,#{e_mail},#{e_title},#{e_content},sysdate,#{id})
+</insert> 
+
+
+ 
+<!-- 
+ <select id="content" parameterType="int" resultType="dto.EventBoardDTO">
+ select * from EventBoard where Event_Num=#{event_num} 
+ </select>
+
+ <select id="lista" resultType="dto.EventBoardDTO">
+ select * from EventBoard order by Event_Num desc
+  
+ </select>
+ 
+
+ 
+  
+    <select id = "count" resultType="int">
+       select count(*) from EventBoard
+  </select>
+  
+ 
+  <select id="listb" parameterType="dto.PageDTO" resultType="dto.EventBoardDTO"> 
+  <![CDATA[ 
+  select b.* from 
+  (select rownum as rm, a.* from(   
+  select * from EventBoard order by Event_Num desc )a)b
+  where b.rm>=#{startRow} and b.rm<=#{endRow}
+  ]]>    
+  </select> 
+ 
+ <update id="update" parameterType="dto.EventBoardDTO">
+      update EventBoard set Event_Name=#{event_name},
+       Event_Content=#{event_content}
+       where Event_Num=#{event_num}    
+</update>
+ 
+ 
+ 
+ <delete id ="delete" parameterType="int"> 
+ delete from EventBoard where Event_Num=#{event_num} 
+</delete>
+   -->
+ 
+ 
+ 
+ 
+</mapper>  
+
+
+
+
+
+
+
+
+
+
+

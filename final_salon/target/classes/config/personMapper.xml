@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="img">
+
+	
+	<insert id="ins" parameterType="dto.ImgcontentDTO">
+	  insert into imgcontent 
+	  values(#{url},#{num},#{name})
+	</insert>
+ 
+     <select id="content" parameterType="int" resultType="dto.ImgcontentDTO">
+       select * from imgcontent where num=#{num} 
+     </select>
+     
+</mapper>   
+
+
+
+
+
+
+
+
+
+
+

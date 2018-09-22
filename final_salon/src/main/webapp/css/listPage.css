@@ -1,0 +1,262 @@
+@charset "UTF-8";
+
+@import url(//cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+
+.space {
+	height: 30px;
+}
+
+.space2 {
+	height: 20px;
+}
+
+.space3 {
+	height: 40px;
+}
+
+.listWrap {
+	margin: auto;
+	width: 1400px;
+	height: auto;
+	font-family: 'Nanum Square';
+}
+
+.newproduct {
+	text-align: center;
+	font-weight: bold;
+}
+
+.hr {
+	height: 25px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+#boxboxbox {
+	margin: 10px;
+	position: relative;
+	width: 60px;
+	height: 30px;
+	text-align: center;
+	background-color: #ff80c0;
+	z-index: 10px;
+	line-height: 30px;
+	color: white;
+}
+
+.category {
+	text-align: left;
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+.category li {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+.chong {
+	margin-right: 20px;
+	margin-left: 20px;
+}
+
+#icon {
+	width: 40px;
+	height: 40px;
+	margin-left: 1139px;
+}
+
+#doubleBox .box {
+	min-height: 300px;
+	height: auto;
+	width: 655px;
+	float: left;
+	padding: 20px;
+	position: relative;
+	margin-top: 0px;
+}
+
+.image {
+	position: absolute;
+	display: inline-block;
+	margin: auto;
+	top: -20px;
+	width: 275px;
+	height: 275px;
+}
+
+.image img {
+	width: 100%;
+	height: 100%;
+	margin: auto;
+}
+
+.text {
+	float: right;
+	position: relative;
+	width: 300px;
+	height: 40px;
+	left: -15px;
+	text-align: left;
+	font-size: 19px;
+	font-weight: bold;
+	line-height: 40px;
+}
+
+.line {
+	width: 300px;
+	height: 70px;
+	float: right;
+	position: relative;
+	top: 70px;
+	left: 300px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.price {
+	float: right;
+	top: 80px;
+	width: 300px;
+	height: 40px;
+	position: relative;
+	font-weight: bold;
+	font-size: 17px;
+	border-top: 1px solid #D8D8D8;
+}
+
+div #iconbox {
+	float: right;
+	top: 132px;
+	position: relative;
+	left: 34px;
+}
+
+.cnt {
+	float: right;
+	position: relative;
+	top: 140px;
+	left: 86px;
+	font-weight: bold;
+	font-size: 17px;
+}
+
+#iconbag {
+	float: right;
+	position: relative;
+	top: 126px;
+	left: 173px;
+}
+
+/* .pagenum{
+	float:left;
+} */
+.pagenum2 {
+	/*float:left;
+	padding-bottom: 20px;
+	position:absolute; 
+	bottom:0px;
+	clear:left;
+	padding-bottom : 0px;
+	padding-left:900px;
+	width:100px;
+	height:50px;
+	left:900px;
+	bottom:0px; */
+	/* width: 100px; */
+	/* position:absolute; 
+    padding-left: 900px;
+    float:left; */
+	/* padding-left: 900px;
+    float: left; */
+	text-align: center;
+}
+
+.pagenum2 a {
+	display: inline;
+	font-size: 1.0em;
+}
+
+.list_view {
+	min-height: 800px;
+}
+
+.sel_menu a {
+	float: left;
+	margin: 10px;
+}
+
+.sel_menu_list {
+	float: left;
+	margin: 10px;
+}
+
+.sel_list_view {
+	width: 400px;
+	min-height: 30px;
+	float: right;
+}
+
+.sel_list_view_line {
+	margin: 20px;
+	border-bottom: 1px solid #D8D8D8;
+}
+
+.color_option_view {
+	min-height: 40px;
+	width: 300px;
+	padding-left: 300px;
+}
+
+.color_option_view a {
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	padding-right: 5px;
+	width: 300px;
+}
+
+/* .color_option_view img{
+	padding-bottom: 5px;
+} */
+.slide_click {
+	width: 280px;
+	height: 30px;
+	margin-bottom: 10px;
+	border: none;
+	background-color: #FFFFFF;
+}
+
+.slide_view {
+	/* 	padding-top: 170px; */
+	width: 280px;
+	/* border-bottom: 1px solid #D8D8D8; */
+}
+
+.opt_img {
+	padding-top: 50px;
+	min-width: 300px;
+	min-height: 70px;
+	top: 50px;
+	height: 92px;
+	overflow: hidden;
+}
+
+.opt1 {
+	/* padding-left: 300px; */
+	/* height: 200px; */
+	width: 400px;
+	position: relative;
+	left: 200px;
+	top: -70px;
+}
+
+.opt_img img {
+	margin-bottom: 2px;
+}
+
+#doubleBox {
+	min-height: 325px;
+    border-bottom: 2px solid #f5f5f5;
+    margin: 20px auto;
+    width: 1400px;
+}

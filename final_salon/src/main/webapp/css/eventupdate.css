@@ -1,0 +1,38 @@
+p {
+	margin: 0;
+}
+
+ol, ul {
+	margin-top: 14px;
+}
+
+a {
+	color: black;
+}
+
+.imgView {
+	width: 200px;
+	height: 200px;
+}
+
+.outputView {
+	width: 200px;
+	height: 200px;
+}
+
+#vname {
+	width: 500px;
+}
+
+#eventup {
+	margin-bottom: 15px;
+	margin-left: 215px;
+}
+
+#mar {
+	height: 40px;
+}
+
+#mar1 {
+	height: 180px;
+}

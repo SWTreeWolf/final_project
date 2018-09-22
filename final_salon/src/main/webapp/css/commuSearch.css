@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+.searc_wrap {
+	width: 1400px;
+	margin: 0 auto;
+	height: auto;
+	font-family: 'NanumSquare', sans-serif;
+}
+
+.backgr {
+	background-color: #f5f5f5;
+	height: 160px;
+	font-family: 'NanumSquare', sans-serif;
+	font-size: 17px;
+}
+
+.textttbox {
+	height: 42px;
+	width: 330px;
+	display: block;
+	border: none;
+	margin: 0 auto;
+	float: left;
+	margin-left: 170px;
+	font-weight: bold;
+}
+
+.input {
+	width: 700px;
+	margin: 0 auto;
+	/* background-color: yellow; */
+	height: 60px;
+}
+
+.input2 {
+	width: 700px;
+	margin: 0 auto;
+	/* background-color: yellow; */
+	height: 60px;
+}
+
+.imagee {
+	display: inline;
+	cursor: pointer;
+}
+
+.searc_wrap {
+	width: 1200px;
+	margin: 0 auto;
+	/* background-color: yellow; */
+}
+
+.tableee {
+	margin-top: 10px;
+	text-align: center;
+	border-top: 1px solid #f5f5f5;
+	width: 1200px;
+	line-height: 30px;
+	border-bottom: 1px solid #f5f5f5;
+	font-size: 16px;
+}
+
+table th {
+	background-color: #FA5882;
+	color: white;
+}
+
+table th, td {
+	text-align: center;
+	/* border-top: 1px solid #f5f5f5; */
+}
+
+table tr.dd:hover {
+	background-color: #ffb0b0;
+	cursor: pointer;
+	color: white;
+}
+
+.dd a {
+	color: black;
+}
+
+.dd a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.Btn {
+	width: 70px;
+	height: 30px;
+	border: 1px solid #FA5882;
+	border-radius: 1px;
+	text-align: center;
+	line-height: 30px;
+	margin: 10px;
+	float: right;
+}
+
+.Btn>a {
+	color: #FA5882;
+	text-decoration: none;
+}
+
+.Btn>a:hover {
+	background-color: #FA5882;
+	color: white;
+	font-weight: bold;
+}
+
+.margin {
+	height: 10px;
+}

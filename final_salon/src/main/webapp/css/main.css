@@ -1,0 +1,224 @@
+.main_body_wrap {
+	margin: auto;
+	width: 1400px;
+	height: 2000px;
+}
+
+.slick-prev, .slick-next {
+	font-size: 0;
+	position: absolute;
+	bottom: 90px;
+	color: #e9e9e9;
+	border: 0;
+	background: none;
+	z-index: 1;
+	outline: none;
+}
+
+.slick-prev {
+	
+}
+
+.slick-prev:after {
+	content: "<";
+	font: 30px/1 'FontAwesome';
+	top: -80px;
+	position: absolute;
+}
+
+.slick-next {
+	right: 0px;
+	text-align: right;
+}
+
+.slick-next:after {
+	content: ">";
+	font: 30px/1 'FontAwesome';
+	top: -80px;
+	position: absolute;
+	left: -15px;
+	outline: none;
+}
+
+.slick-prev:hover:after, .slick-next:hover:after {
+	color: #7e7e7e;
+}
+
+.new_image {
+	width: 1400px;
+	margin: auto;
+}
+
+.new_image div img {
+	width: 200px;
+	display: inline-block;
+}
+
+.slick-slide #banner>img {
+	width: 100%;
+	height: 600px;
+	max-width: 1400px;
+	margin: 0 auto;
+}
+
+.slick-slide>a {
+	text-align: center;
+}
+
+.slick-dots {
+	position: absolute;
+	bottom: -45px;
+	list-style: none;
+	display: block;
+	text-align: center;
+	padding: 0;
+	width: 100%;
+	border-bottom: 2px solid #f5f5f5;
+}
+
+.slick-dots li {
+	position: relative;
+	display: inline-block;
+	height: 20px;
+	width: 20px;
+	margin: 0 5px;
+	padding: 0;
+	cursor: pointer;
+}
+
+.slick-dots li button {
+	border: 0;
+	background: transparent;
+	display: block;
+	height: 20px;
+	width: 20px;
+	outline: none;
+	line-height: 0;
+	font-size: 0;
+	color: transparent;
+	padding: 5px;
+	cursor: pointer;
+}
+
+.slick-dots li button:hover, .slick-dots li button:focus {
+	outline: none;
+}
+
+.slick-dots li button:hover:before, .slick-dots li button:focus:before {
+	opacity: 1;
+}
+
+.slick-dots li button:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "•";
+	width: 20px;
+	height: 20px;
+	font-family: "slick";
+	font-size: 6px;
+	line-height: 5px;
+	text-align: center;
+	color: black;
+	opacity: 0.25;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.slick-dots li.slick-active button:before {
+	color: black;
+	opacity: 0.75;
+}
+
+.main_product_group {
+	margin-top: 60px;
+	height: auto;
+}
+
+.main_product_group .group_top a:nth-child(1):hover {
+	border: none;
+	text-decoration: none;
+}
+
+.main_product_group .group_top a:nth-child(2):hover {
+	border: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.main_product_group .group_top {
+	height: 50px;
+	border-bottom: 2px solid black;
+}
+
+.main_product_group .group_top a:nth-child(1) {
+	float: left;
+	margin-right: 1230px;
+	display: inherit;
+	margin-top: 15px;
+}
+
+.main_product_group .group_top a:nth-child(2) {
+	float: left;
+	display: inherit;
+	margin-top: 15px;
+}
+
+.main_product_group .group_body {
+	margin-top: 30px;
+	height: auto;
+	border-bottom: 2px solid #f5f5f5;
+	padding-bottom: 10px;
+	margin-bottom: 15px;
+}
+
+.new_image div p {
+	margin: auto;
+	margin-top: 15px;
+	text-align: center;
+}
+
+.main_product_group .best_group_body {
+	/* background-color: yellow; */
+	border-bottom: 2px solid #f5f5f5;
+	min-height: 840px;
+}
+
+/* 베스트 상품 */
+.best_group_body {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.best_ul {
+	list-style-type: none;
+	margin: 0 auto;
+}
+
+.best_li {
+	margin-bottom: 10px;
+	width: 345px;
+	height: 400px;
+	float: left;
+}
+
+.best_img {
+	width: 345px;
+	height: 340px;
+}
+
+.best_img img {
+	margin-top: 5px;
+	width: 345px;
+	height: 330px;
+}
+
+.best_info {
+	margin-top: -5px;
+}
+
+.best_info ul li:first-child {
+	margin-bottom: 10px;
+	font-size: 17px;
+}
+​

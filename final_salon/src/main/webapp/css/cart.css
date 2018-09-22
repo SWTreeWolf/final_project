@@ -1,0 +1,346 @@
+.proLine {
+	width: 750px;
+	height: 1px;
+	background: #bfbfbf;
+}
+
+#cart-top {
+	position: relative;
+	text-align: center;
+	top: 60px;
+	height: 180px;
+}
+
+#cart-top h1 {
+	font-weight: 450;
+	color: black;
+}
+
+#cart-content {
+	float: left;
+	margin-bottom: 100px;
+	min-width: 1000px;
+}
+
+#cart {
+	border: 1px solid #e5e5e5;
+}
+
+#cart-sub {
+	font-size: 20px;
+	font-weight: bold;
+	color: #333;
+	cursor: pointer;
+	overflow: inherit;
+	white-space: inherit;
+	position: relative;
+	padding: 0 10px 0 40px;
+	height: 68px;
+	line-height: 68px;
+	background-position: 98% center;
+	border-bottom: 1px solid #e5e5e5;
+	background-color: #f5f5f5;
+	background-position: 98% center;
+}
+
+#orderList {
+	padding: 0px 10px 0 60px;
+}
+
+.proBox {
+	height: 175px;
+	padding-top: 20px;
+	position: relative;
+	padding: 20px 0;
+}
+
+.proBoxOpt {
+	height: auto;
+	position: relative;
+	padding: 20px 0;
+	width: 790px;
+}
+
+.orderChk {
+	left: -153px;
+	top: 10px;
+	position: relative;
+}
+
+.checkForm {
+	float: left;
+}
+
+.proImg {
+	float: left;
+	margin-right: 30px;
+}
+
+.proImgImg {
+	width: 100px;
+	height: 100px;
+	position: relative;
+	top: 30px;
+	border: 1px solid #c5bebe;
+}
+
+.proName {
+	display: inline-block;
+	vertical-align: top;
+	line-height: 30px;
+}
+
+.cntBox {
+	display: inline-block;
+	width: 105px;;
+	height: 30px;
+	position: relative;
+	border: 1px solid #c3c3c3;
+	left: 400px;
+	top: 5px;
+	float: left;
+}
+
+.no_option_cntBox {
+	margin-left: 223px;
+	display: inline-block;
+	border: 1px solid #c3c3c3;
+	width: 106px;
+	height: 30px;
+}
+
+#option_btn, #no_option_btn {
+	vertical-align: top;
+	line-height: 23px;
+}
+
+.proDetail {
+	min-height: 160px;
+	border-bottom: 1px solid #c3c3c3;
+}
+
+.proInfo .proDetail .cntBox .dd, .proInfo .proDetail .no_option_cntBox .dd
+	{
+	width: 165px;
+	height: 35px;
+}
+
+.proInfo .proDetail .cntBox .dd .cart_count_down, .proInfo .proDetail .cntBox .dd .cart_count_up,
+	.proDetail .cntBox .dd .cart_cnt, .proInfo .proDetail .no_option_cntBox .dd .cart_count_down,
+	.proInfo .proDetail .no_option_cntBox .dd .cart_count_up, .proDetail .no_option_cntBox .dd .cart_cnt
+	{
+	position: relative;
+	display: inline-block;
+	width: 34px;
+	height: 28px;
+}
+
+.proInfo {
+	min-height: 120px;
+}
+
+.cart_count_up {
+	left: -8px;
+}
+
+.cart_cnt {
+	top: -9px;
+	border: none;
+	left: -3px;
+}
+
+.proPrice {
+	font-size: 20px;
+	text-align: center;
+	background: none;
+	border: none;
+	width: 100px;
+	font-weight: 600;
+	color: grey;
+}
+
+.proPrice-wrapper {
+	top: -35px;
+	left: 590px;
+	top: px;
+	/* width: 140px; */
+	height: 40px;
+	position: relative;
+}
+
+.cntBox button, .cntBox img, .cntBox .cart_cnt {
+	width: 30px;
+	height: 28px;
+	cursor: pointer;
+	z-index: 2;
+}
+
+.cntBox img {
+	position: relative;
+	left: -8px;
+	top: -3px;
+}
+
+.others {
+	border: 1px solid lightgrey;
+	background: white;
+	padding: 8px;
+	width: 280px;
+	cursor: grab;
+}
+
+.delBtn {
+	margin-left: 730px;
+}
+
+.mySel {
+	font-size: 15px;
+}
+
+.selBox {
+	width: auto;
+	height: auto;
+	background: #f5f5f5;
+	position: relative;
+	margin-top: 70px;
+	border: 1px solid #e5e5e5;
+}
+
+.selSub {
+	position: relative;
+	top: 23px;
+}
+
+.proBoxOpt .delBtn {
+	left: 742px;
+	top: -110px;
+}
+
+.sel {
+	text-align: left;
+	height: 40px;
+	position: relative;
+	margin: 10px;
+}
+
+.sel>img {
+	margin-left: -80px;
+}
+
+.optdelBtn {
+	display: inline-block;
+	clear: both;
+	float: right;
+	margin-top: -20px;
+}
+
+.optdelBtn>img {
+	float: right;
+}
+
+.selBox .selName {
+	position: relative;
+	left: 10px;
+}
+
+.proOptSub {
+	position: relative;
+	top: 40px;
+}
+
+#cartInfo {
+	float: right;
+	margin-left: 50px;
+}
+
+#cartInfo p {
+	text-align: center;
+	width: 300px;
+	height: 50px;
+	position: relative;
+	line-height: 50px;
+	cursor: pointer;
+	margin-bottom: 15px;
+}
+
+#totalPrice {
+	background: #c8b0bd;
+	color: white;
+}
+
+#totalPrice span {
+	display: inline-block;
+	text-align: right;
+	margin-left: 100px;
+	font-weight: 500;
+	font-size: 20px;
+}
+
+#orderBtn {
+	text-align: center;
+	background: #f54a7e;
+	color: white;
+}
+
+#cartDel {
+	text-align: center;
+	color: #666;
+	background: #fff;
+	border: 1px solid #aaa;
+}
+
+#cartDel {
+	-webkit-transition: background 1s;
+	-moz-transition: background 1s;
+	-o-transition: background 1s;
+	transition: background 1s
+}
+
+#cartDel:hover {
+	color: white;
+	background: grey
+}
+
+#cartAllChk {
+	position: relative;
+	top: -20px;
+}
+
+#cartAllChk-label {
+	left: -24px;
+	position: relative;
+	background:
+		url(https://www.etudehouse.com/kr/ko/web_resource/front/images/common/bg_checkForm.png)
+		no-repeat 0 -79px;
+	z-index: 1;
+	cursor: pointer;
+}
+
+#cartAllChk-label span {
+	position: relative;
+	left: 40px;
+	top: -24px;
+}
+
+#no_opt {
+	float: left;
+}
+
+#optionPirce {
+	display: inline;
+	float: right;
+}
+
+.proInfo .proDetail .selBox .sel #optionPirce>span {
+	position: relative;
+	top: 10px;
+	margin-right: 90px;
+}
+
+.proInfo .proDetail #nooptionPirce {
+	display: inline-block;
+	margin-left: 122px;
+	vertical-align: top;
+	line-height: 33px;
+	height: 30px;
+}

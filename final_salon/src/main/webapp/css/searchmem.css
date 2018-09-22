@@ -1,0 +1,54 @@
+html, body, form{
+	margin : 0;
+	width : 100%;
+    height: 100%;
+}
+
+.loginWrap {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	background: url(../images/bg_login.jpg) no-repeat;
+	background-size: cover;
+}
+
+.loginWrap .searchWrap {
+	display: inline-block;
+    width: 270px;
+    margin: 18px auto 0 auto;
+    line-height: 90px;
+    box-shadow: 7px 9px;
+    background: white;
+}
+
+.loginWrap .searchWrap p{	
+	height: 65px;	
+}
+
+.loginWrap .searchWrap input {
+	width: 80%;
+    height: 50px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.loginWrap .searchWrap input:nth-of-type(1) {
+	margin: 10px 0;
+}
+
+.loginWrap .searchWrap .button_search_mem{
+	display: inline-block;
+	background: #f54a7e;
+	color: white;
+	margin-top: 9px;
+	width: 83%;
+    height: 61px;
+    vertical-align: top;
+    line-height: 60px;
+}
+
+.loginWrap .searchWrap .button_search_mem a{
+	color: white;
+    font-size: 17px;
+}

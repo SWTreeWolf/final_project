@@ -1,0 +1,734 @@
+#container {
+    position: relative;
+}
+div {
+    display: block;
+}
+body {
+    font-family: 'Noto', 'dotum', '돋움', 'verdana', 'sans-serif';
+    font-size: 14px;
+    color: #666;
+}
+
+#container .content {
+    position: relative;
+    min-width: 1024px;
+    max-width: 1200px;
+    min-height: 400px;
+    margin: 0 auto;
+} 
+ 
+#container .content .pageTitleWrap {
+    padding: 20px 0 20px 0; 
+    text-align: center;
+}
+
+.h2_title {
+    line-height: 100%;
+    font-size: 36px;
+    font-weight: 500 !important;
+    color: #222;
+}
+
+h2 {
+    display: block;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+ } 
+ 
+ h2 {
+    font-size: 1.5em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+} 
+
+
+.orderPayWrap .orderPayStep {
+    width: 50%;
+    margin: 0 auto 10px;
+}
+
+.orderPayWrap .orderPayStep ul {
+	margin-left:100px;
+    width: 100%;
+} 
+
+ol, ul, li {
+    list-style: none;
+}
+
+ul {
+    display: block;
+    list-style-type: disc;
+    -webkit-margin-before: 1em;
+    -webkit-margin-after: 1em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px; 
+}
+
+.orderPayWrap .orderPayStep ul:after {
+    display: block;
+    clear: both;
+    content: "";
+} 
+
+form {
+    display: block;
+    margin-top: 0em;
+}
+
+.checkForm {
+    float: none;
+} 
+
+.orderPayWrap .orderPayStep ul li {
+    position: relative;
+    float: left;
+    width: 33.33%; 
+    text-align: center;
+    font-weight: 500;
+    color: #333;
+} 
+ 
+.orderListWrap {
+     
+} 
+
+#orderListWrap {   
+width:69.2%;  
+border: 1px solid #e5e5e5;
+float: left;  
+} 
+ 
+
+.orderListWrap .pull_down_group.open > dt {
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
+    background-position: 98% center;
+}  
+  
+#pull_down_button {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    overflow: inherit;
+    white-space: inherit;
+    margin-bottom: 5px;    
+} 
+ 
+#pull_down_button {
+    position: relative;
+    padding: 0 10px 0 40px;
+    height: 68px;
+    line-height: 68px;
+    background-color: #f5f5f5;
+    background-position: 98% center; 
+    border: 1px solid #e5e5e5;
+    
+}
+
+em {
+    font-style: normal;
+    color: #f54a7e; 
+}
+
+ 
+#pull_down_con {
+    padding: 15px 40px 0;
+    border: 1px solid #e5e5e5;
+    height : auto;
+    margin-bottom: 5px;        
+}   
+
+
+.prdListWrap .ordPrdList li .prdImg {
+    position: relative;
+    float: left; 
+    width: 100px;
+    height: 100px;
+}
+
+
+.prdListWrap .ordPrdList li .prdInfo {
+    float: right;
+    width: 82%;
+    min-height: 100px;
+} 
+
+.prdListWrap {}
+.prdListWrap .normalPrd {}
+.prdListWrap .ordPrdList {}
+.prdListWrap .ordPrdList > li {position: relative; padding: 20px 0; border-bottom: 1px solid #e5e5e5;}
+.prdListWrap .ordPrdList > li:last-child {border-bottom: 0 none;}
+.prdListWrap .ordPrdList li:after {display: block; clear: both; content: "";}
+.prdListWrap .ordPrdList li .prdImg {position: relative; float: left; width: 100px; height: 100px;}
+.prdListWrap .ordPrdList li .prdImg img {width: 100%; height: 100%;}
+.prdListWrap .ordPrdList li .prdInfo {float: right; width: 82%; min-height: 100px;}
+.prdListWrap .ordPrdList li .prdInfo .prdDetail {position: relative; min-height: 80px;}
+.prdListWrap .ordPrdList li.groupPrd .prdInfo .prdDetail {/*max-height: 104px;*/ min-height: 60px;}
+/*.takeoutOrdPrd .prdListWrap .ordPrdList li.groupPrd.soldout  .prdInfo > .prdDetail {padding-bottom: 50px;}*/
+.prdListWrap .ordPrdList li .prdInfo .prdName {font-size: 16px; font-weight: 500; color: #333; line-height: 30px;}
+.prdListWrap .ordPrdList li .prdInfo .prdName.midTxt {line-height: 100px;}
+.prdListWrap .ordPrdList li .prdInfo .type {font-size: 13px; font-weight: 300; color: #f54a7e; font-weight: 500;}
+.prdListWrap .ordPrdList li .prdInfo .prdName .type {font-size: 15px; margin-right: 5px;}
+.prdListWrap .ordPrdList li .prdInfo .prdOpt {display: block;; font-size: 13px; font-weight: 300; color: #999;}
+.prdListWrap .ordPrdList li .prdInfo .select-ul {/*position: absolute; bottom: 0; left: 0; */display: block; width: 273px; margin-top: 15px;}
+.prdListWrap .ordPrdList li .prdInfo .select-ul ul.selList li a em {color: #f54a7e;}
+.prdListWrap .ordPrdList li .prdInfo .prdCount {display: block; font-size: 15px; font-weight: 500; color: #222; line-height: 30px;}
+.prdListWrap .ordPrdList li .prdInfo .prdCount span {font-family: 'Arial'; font-weight: 600;}
+.prdListWrap .ordPrdList li .prdInfo .pdtAlt {margin-top: 10px; display: inline-block; /*height: 20px; */line-height: 20px;}
+.prdListWrap .ordPrdList li .prdInfo .pdtAlt span {display: inline-block; padding: 0 5px; height: 21px; line-height: 21px; background: #999; font-size: 12px; font-weight: 500; color: #fff;}
+.prdListWrap .ordPrdList li .prdInfo .prdPrice {position: relative; bottom: 0px; left: 350px; font-family: 'Arial'; font-size: 16px; font-weight: bold; color: #333; line-height: 30px;}
+.prdListWrap .ordPrdList li .prdInfo .prdPrice span {font-family: 'Arial'; font-size: 18px;}
+.prdListWrap .ordPrdList li .prdInfo .prdPrice em {font-size: 12px; color: #333;}
+.prdListWrap .ordPrdList li .prdInfo .pdtAlt+.prdPrice {bottom: 30px;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange {font-size:  14px; color: #333; text-align: right; margin-top: 10px;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .userPt {display: none; font-size: 14px; color: #666; letter-spacing: -0.5px;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .userPt em {font-family: 'Arial'; font-size: 15px;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount {display: none; margin-top: 10px; font-size: 14px; color: #666; line-height: 30px;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount select {width: 90px; height: 30px; line-height: 28px; font-family: 'Arial'; outline: none;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount select {padding-left: 5px; background: #fff url(/kr/ko/web_resource/front/images/common/bg_select_off.gif) no-repeat 110% center; appearance: none; -webkit-appearance: none; -moz-appearance: none;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount select::-ms-expand {display: none;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount .select-ul {display: inline-block; width: 90px; margin-top: 0; text-align: left;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount .select-ul .title {height: 30px; line-height: 29px; outline: none; font-family: 'Arial';}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount .select-ul .selList {top: 31px;}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount .select-ul .selList li a {font-family: 'Arial';}
+.prdListWrap .ordPrdList li .prdInfo .pointInterchange .interchangeCount strong {font-size: 16px; color: #333; font-weight: bold; font-family: 'Arial'; margin-left: 10px;}
+.takeoutOrdPrd .prdListWrap .ordPrdList li.groupPrd.soldout  .prdInfo .prdPrice {bottom: 50px;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt {}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt + .giftPrd  {border-top: 0px none; margin-top: 0;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dt {font-size: 14px; font-weight: 500; color: #333; cursor: default;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul {background: #f5f5f5; border: 1px solid #e5e5e5;border-bottom: 0px none;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li {position: relative; padding: 12px 21px 10px 21px; border-bottom: 1px solid #e5e5e5; min-height: 40px;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optColor {display: inline-block; width: 40px; height: 40px; vertical-align: top; margin-right: 10px;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optColor img {width: 100%;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optName {display: inline-block; font-size: 14px; color: #666; vertical-align: middle; width: 50%; line-height: 20px; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal; overflow: hidden;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optName .pdtAlt {display: block; margin-top: 0;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optName .additionalFree {display: inline-block; margin-left: 5px; font-size: 14px; color: #f54a7e;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optName .optCount {display: block; font-size: 15px; color: #666;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optName .optCount span {font-family: 'Arial';}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd > ul > li .optPrice {position: absolute; top: 14px; right: 25px; line-height: 40px; font-family: 'Arial'; font-size: 16px; font-weight: bold; color: #333;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optPrice {top: 50%; margin-top: -21px;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd > ul > li {position: relative;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd > ul > li .optCount {position: absolute; top: 50%; right: 25px; margin-top: -21px; line-height: 40px; font-size: 16px; font-weight: bold; color: #333;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd > ul > li .optCount span {font-family: 'Arial';}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd > ul > li .button1.write {position: absolute; top: 10px; right: 10px; width: 70px; height: 24px;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd > ul > li .button1.write a {width: 100%; height: 100%; line-height: 22px; font-size: 12px;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd ul li .optPrice em {font-family: 'Arial'; font-weight: 600;}
+.prdListWrap .ordPrdList li .prdInfo .choiceOpt dd ul li .pointInterchange {position: absolute; top: 11px; right: 25px;}
+.prdListWrap .ordPrdList li .giftPrd {padding-top: 10px; margin-top: 20px; border-top: 1px solid #e5e5e5;/* padding-bottom: 10px; border-bottom: 1px solid #e5e5e5;*/}
+.prdListWrap .ordPrdList li .giftPrd:after {display: block; clear: both; content: "";}
+.prdListWrap .ordPrdList li .giftPrd .freePrdImg {float: left; width: 80px; height: 80px;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdImg img {width: 100%; height: 100%;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdInfo {position: relative; float: right; width: 83%; padding: 20px 0;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdInfo .prdDetail {min-height: 100%;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdInfo .giftName {font-size: 14px; font-weight: 500; color: #333;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdInfo .giftName .giftType {color: #f54a7e; margin-right: 10px;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdInfo .giftOpt {font-size: 13px; font-weight: 300; color: #999;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdInfo .giftCount {display: block; font-size: 15px; color: #333; font-weight: 500;}
+.prdListWrap .ordPrdList li .giftPrd .freePrdInfo .giftCount span {font-family: 'Arial'; font-weight: 600;}
+/*.prdListWrap .exhibitionPrd {border-top: 1px solid #e5e5e5;}*/
+.prdListWrap .exhibitionPrd .ordPrdList li .prdInfo .prdCount {display: block; font-size: 15px; font-weight: 500; color: #222; line-height: 30px;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .prdCount span {font-family: 'Arial'; font-weight: 600;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt {margin-bottom: 20px;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt + .giftPrd  {border-top: 0px none; margin-top: -20px;}
+.prdListWrap .exhibitionPrd .ordPrdList li .prdInfo .choiceOpt dt {font-size: 14px; font-weight: 500; color: #333;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul {background: #f5f5f5; border: 1px solid #e5e5e5;border-bottom: 0px none;}
+/*.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li {position: relative; padding: 12px 80px 10px 21px; border-bottom: 1px solid #e5e5e5;}*/
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optImg {display: inline-block; width: 80px; height: 80px; vertical-align: middle; margin-right: 10px;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optImg img {width: 100%; height: 100%;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optColor img {width: 100%;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optName {display: inline-block; font-size: 14px; color: #333; font-weight: 500; vertical-align: middle; line-height: 20px;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optName .additionalFree {display: inline-block; margin-left: 5px; font-size: 14px; color: #f54a7e;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optName .optPresent {display: block; font-size: 13px; color: #999; font-weight: 300; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal; overflow: hidden;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optName .optCount {display: block; font-size: 15px; color: #666;}
+.prdListWrap .ordPrdList li.exhibitionPrd .prdInfo .choiceOpt dd ul li .optPrice {position: absolute; top: 50%; right: 50px; margin-top: -20px; line-height: 40px; font-size: 16px; font-weight: bold; color: #333;}
+
+
+/********/ 
+#ordCstmInfoDisp {
+	
+}   
+
+#cstmNm {
+	height:40px;
+	width:90px;
+}
+
+.orderListWrap .pull_down_group dt {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    overflow: inherit;
+    white-space: inherit;
+    
+}
+
+#writeBox li p {
+    position: relative;
+    width : 20%;
+} 
+
+ 
+.select-ul .selList {
+    display: none;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    position: absolute;
+    top: 39px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border: 1px solid #333;
+    z-index: 5;
+} 
+ 
+#dlvBox {  
+	margin-top: 0;
+    width: 90%; 
+    
+}
+
+#writeBox li .mailBox .select-ul {   
+    display: inline-block;       
+    width: 142px;     
+}
+ 
+#ordEmail1 {
+    width: 130px;
+    height:40px;
+}
+#ordEmail2 {
+    width: 130px;
+    height:40px;
+}
+ 
+#writeBox > ul > li {
+    position: relative;
+    padding: 10px 0 10px 0;
+    
+}
+
+#writeBox li .mailBox {
+    display: inline-block;
+    width: 80%;
+    margin-left: 2px;
+}
+ 
+#writeBox li .telBox {
+    display: inline-block;
+}
+
+#writeBox li .telBox .select-ul {
+    display: inline-block;
+    width: 50px;  
+     margin-right: 12px;    
+}
+
+#writeBox li .telBox .select-ul .title {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+    padding-right: 30px;
+    text-align: left;
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #fff;
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+
+#line {
+	 border: 1px solid #e5e5e5;
+}
+
+#ordMbl2 {
+    width: 72px;
+    height:40px;
+}
+#ordMbl3 {
+    width: 72px;
+    height:40px;
+}
+.mt15 {          
+}
+
+.orderListWrap .pull_down_group dt {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    overflow: inherit;
+    white-space: inherit;
+}
+
+#dlvInfoDisp{
+	border: 1px solid #e5e5e5; 
+}
+
+#pull_down_con2 {
+    padding: 15px 40px 0;
+    border: 1px solid #e5e5e5; 
+    height : 250px; 
+    margin-bottom: 5px;     
+}      
+  
+#pull_down_con3 {      
+    padding: 15px 40px 0;     
+    border: 1px solid #e5e5e5;             
+    height : 550px;
+    margin-bottom: 5px;                      
+}   
+
+
+#radioForm { 
+    margin-right: 20px;
+    display: inline-block;
+} 
+
+
+#dlvSelDisp {
+	display : none;
+}
+
+
+#dlvSelDisp2 {
+	display: none;  
+}
+
+#recvDisp2 {
+   
+} 
+
+#noOpt {  
+    display: inline-block;
+    width: 60px; 
+} 
+ 
+#noOpt .title {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    line-height: 31px;   
+    padding-right: 30px;
+    text-align: left;
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #fff; 
+    border: 1px solid #ccc;
+    outline: none; 
+}
+
+#telBox {   
+   display: inline-block; 	
+   width :500px;   
+} 
+
+
+#recvNm{
+	height: 30px;   
+	width: 100px;    	
+}
+
+
+#mbl1 {
+	height :35px; 
+	width: 60px; 
+}
+
+
+#mbl2 {
+	height :35px; 
+	width: 80px; 
+}
+
+#mbl3 {
+	height :35px; 
+	width: 80px;    
+}
+    
+#recvDisp2 > ul > li {   
+    position : relative;
+    padding: 10px 0 10px 0;
+}
+
+#tel1 {
+	height :40px; 
+	width: 60px;    
+}
+    
+
+#tel2 {
+	height :35px; 
+	width: 80px;   
+}
+
+#tel3 {
+	height :35px; 
+	width: 80px;    
+} 
+
+#addr1 {  
+	width:455px;
+	height:40px;
+	margin: 10px 0 10px 0;   
+}
+#addr2 {    
+	width:455px;
+	height:40px;  
+}
+
+#addressBox {  
+	padding: 10px 0 10px 0; 
+}
+
+#orderZipSrch {   
+	width : 30%; 
+	margin-left: 30px;
+    font-size: 19px;
+    cursor: pointer;  	     
+}
+
+#addr0 { 
+	width: 200px;      
+	height: 40px;   
+} 
+    
+
+#dlv_noOpt .title {                  
+    overflow: hidden; 
+    position: relative;
+    width: 100%;
+    height: 40px;
+    line-height: 38px;
+    padding-right: 30px;
+    text-align: left;
+    text-indent: 10px;
+    font-size: 14px;
+    color: #666;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background: #fff;  
+    border: 1px solid #ccc;
+    outline: none;
+}    
+  
+#dlvMsg {
+   padding-left: 3px;
+   width:500px;
+   height:40px;  
+   font-size: 20px;  
+   left: 0px;      
+   margin-right:  200px; 
+   font-family: fantasy;            	   
+}
+
+#pos_point{
+	margin-right: 26px;
+    float: right;
+    height: 28px;
+    width: 65px;
+}
+
+/******paylist*******/
+       
+#payListWrap {      
+	display: inline-block;  
+    position: relative;   
+    float: right;
+    width: 27.5%;
+}    
+
+#totalPriceBox dt{ 
+    position: relative;
+    height: 60px;  
+    line-height: 60px;
+    padding: 0 20px;  
+    background: #c8b0bd;
+    color: #fff;
+    margin: 0;
+}
+
+#totalPriceBox {
+border: 1px solid #e5e5e5;    
+} 
+
+  
+#totalPriceBox dt em {
+    position: absolute;
+    top: 0;   
+    right: 20px;
+    height: 60px;  
+    line-height: 60px;
+    color: #fff;    
+    font-family: 'Arial';
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ 
+#totalPriceBox dd > ul {
+    padding: 10px 20px 20px;
+}
+      
+#totalPriceBox dd ul li {
+    position: relative;   
+    line-height: 30px;   
+    margin-top: 5px;  
+}
+#payTxt{     
+	width: 100px;    
+	display: inline; 
+	font-size: 15px; 
+}
+
+#totalPriceBox dd ul li strong{
+	float : right;
+	margin-right: 30px;
+}
+
+/* #lastOrderPrice {  
+	padding-left: 130px;    
+}
+       
+#onlineTotPrc{ 
+	padding-left: 90px;
+}
+ */
+#afterTxt { 
+	display: inline;
+    margin-right: 65px;
+    float: left;   
+}
+
+#spnDlvPrice {        
+	padding-left: 143px;       
+}
+
+
+
+#skkk{
+	padding-left: 15px;
+}
+
+
+#ft_c1 {
+	padding-left : 120px;
+}
+       
+#ft_c2 {
+	padding-left : 85px;
+}       
+       
+#payListWrap .paymentBox {  
+    border: 1px solid #e5e5e5;
+    border-top: 0 none;
+    margin-top: -30px;
+    padding: 30px 20px;
+}
+
+
+#payWay1 .paySelect li {   
+    position: relative;
+    float: left;
+    width: 50%;  
+    height: 40px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -msbox-sizing: border-box;
+    -o-box-sizing: border-box;
+    margin: -1px 0 0 -1px;
+    border: 1px solid #e5e5e5;
+}
+
+#payWay1 {
+	height: 140px;          
+}
+    
+#payWay1 .paySelect li.on { 
+    background: #f54a7e;
+    border: 1px solid #f54a7e;
+}
+
+.terms {
+    position: relative;
+    padding: 20px;
+    border: 1px solid #e5e5e5;
+    height: 75px;    
+}  
+
+#u-agreeChk { 
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 0;
+    margin-top: 20px;
+    margin-left: 20px;
+}  
+
+.mt20 {
+    margin-top: 20px !important;
+}  	
+     
+#payBtn {
+	display:block;  
+}
+     
+
+   
+#payBtn {   
+    width: 100%;
+    width: 100%;
+    line-height: 50px;
+    background: #f54a7e;
+}
+
+#sttlPrcId2 {
+color: white;
+margin-left: 85px;	
+} 
+
+#type1{
+ color: white;
+ font-size: 20px;
+ font-family: sans-serif;
+ text-align : center; 
+}
+
+
+#payListWrap .paymentBox .paySelect li a {
+    display: block;
+    height: 39px;
+    line-height: 39px;
+    font-size: 13px;
+    color: #333;
+    text-align: center;
+}     
+#payListWrap .paymentBox .paySelect li.on {
+    background: #f54a7e;
+    border: 1px solid #f54a7e;
+}
+
+ 
+#payListWrap .paymentBox .paySelect li.on a {
+    margin-left: -1px;
+    color: #fff;
+}
+ 

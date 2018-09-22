@@ -1,0 +1,120 @@
+#regi-content table, #regi-content table th, #regi-content table td {
+	border-collapse: collapse;
+	border: 1px solid lightgrey;
+	padding: 10px;
+	font-size: 16px;
+}
+
+#regi-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+#regi-top {
+	height: 60px;
+	border-bottom: 2px solid #cacdce;
+}
+
+#regi-con-content {
+	margin-bottom: 250px;
+	padding-bottom: 75px;
+	position: relative;
+	left: 40px;
+	top: 30px;
+}
+
+#regi-table {
+	width: 1000px;
+}
+
+#regi-table td:hover {
+	background: #80808038;
+}
+
+#regi-table th {
+	background: #a9335e;
+	color: white;
+	font-weight: 500;
+}
+
+#regi-table textarea {
+	resize: none;
+}
+
+.imgView {
+	width: 200px;
+	height: 200px;
+}
+
+.outputView {
+	width: 200px;
+	height: 200px;
+}
+
+.colorImgBox {
+	position: relative;
+	width: 250px;
+	height: 70px;
+	border: 1px solid lightgrey;
+	border-radius: 3%;
+	box-shadow: antiquewhite;
+	margin: 3px;
+	box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 6px 10px 0
+		rgba(0, 0, 0, 0.19);
+}
+
+.colorImg {
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 13px;
+	background: black;
+	width: 60px;
+	height: 60px;
+}
+
+.xBtn {
+	position: absolute;
+	top: 5px;
+	left: 223px;
+}
+
+.hiddenBox {
+	display: none;
+}
+
+#goods_name {
+	width: 370px;
+}
+
+#regi_input {
+	position: relative;
+	width: 1000px;
+	height: 850px;
+	left: 10px;
+	top: 65px;
+}
+
+#goods_reg {
+	font-size: 19px;
+	position: relative;
+	left: 450px;
+	top: 20px;
+	background: #a3b51b;
+	padding: 3px 10px;
+	width: 70px;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+#goods_reg:hover {
+	background: #7c8a15;
+}
+
+#colorPick {
+	margin-right: -50px;
+}
+
+#countLabel {
+	background: white;
+}

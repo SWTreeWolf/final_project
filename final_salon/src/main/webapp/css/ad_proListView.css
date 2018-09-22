@@ -1,0 +1,138 @@
+#proListView-wrapper {
+	width: 100%;
+	height: 100%;
+}
+
+div#proListView-top {
+	height: 60px;
+	border-bottom: 2px solid #cacdce;
+}
+
+.proViewTable textarea {
+	resize: none;
+}
+
+.imgView {
+	width: 200px;
+	height: 200px;
+}
+
+.imgView2 {
+	width: 700px;
+	height: 300px;
+	overflow: scroll;
+}
+
+.outputView {
+	width: 200px;
+	height: 200px;
+	overflow: srcoll;
+}
+
+.colorImg {
+	margin-top: 5px;
+	margin-left: 5px;
+	margin-right: 13px;
+	background: black;
+	width: 60px;
+	height: 60px;
+}
+
+#goods_name {
+	width: 370px;
+}
+
+#proListView-con-content {
+	padding: 30px;
+	margin-bottom: 50px;
+	padding-bottom: 75px;
+}
+
+#goods_reg {
+	font-size: 16px;
+	position: relative;
+	left: 450px;
+	top: 20px;
+}
+
+#proListView_table {
+	position: relative;
+	top: 50px;
+	left: 10px;
+}
+
+.proViewTable th {
+	padding: 10px;
+	font-size: 16px;
+	color: white;
+	width: 150px;
+	background: #a9335e;
+	font-weight: 500;
+}
+
+.proViewTable td {
+	border: 1px solid lightgrey;
+	padding: 10px;
+	font-size: 16px;
+	color: black;
+	background: #f2f2f2;
+}
+
+.colorSoldTable {
+	border-collapse: collpase;
+}
+
+.colorSoldTable td {
+	width: 10px;
+	height: 60px;
+}
+
+#proListViewSet, .colorHidden {
+	display: none;
+}
+
+#proListBottom {
+	position: relative;
+	left: 400px;
+	top: 20px;
+}
+
+#proListViewSetBtn, #proListViewSet {
+	background: #a3b51b;
+	border: none;
+	font-size: 18px;
+	color: white;
+	width: 60px;
+	padding: 3px;
+	cursor: pointer;
+}
+
+#proListViewSet {
+	width: 80px;
+}
+
+#proListViewSetBtn:hover, #proListViewSet:hover {
+	background: #7c8a14;
+}
+
+#listBbtn {
+	text-decoration: none;
+	background: #9E9E9E;
+	color: white;
+	padding: 4px;
+	font-size: 17px;
+	position: relative;
+	left: 14px;
+}
+
+#listBbtn:hover {
+	background: #ce7575;
+}
+
+.modi-xBtn2 {
+	display: none;
+}
+
+#colorModiAdd {
+	display: none;
+}

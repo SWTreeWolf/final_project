@@ -1,0 +1,514 @@
+/*modal*/
+#cartInsModal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgb(0, 0, 0);
+	background-color: rgba(0, 0, 0, 0.4);
+}
+/* Modal Content */
+#cart_modal_content {
+	width: 500px;
+	height: 200px;
+	background-color: #fefefe;
+	margin: auto;
+	padding: 20px;
+	border: 1px solid #888;
+	z-index: 1000;
+	position: relative;
+	top: 200px;
+}
+
+#cart_ask {
+	margin-left: 100px;
+	font-size: 19px;
+	margin-top: 30px;
+	font-weight: 1000;
+}
+
+#cart_chk_btn {
+	position: relative;
+	top: 50px;
+	left: 90px;
+}
+
+#cart_no_btn {
+	display: inline-block;
+	width: 130px;
+	background: hotpink;
+	height: 40px;
+	color: white;
+	border: 1px solid hotpink;
+	text-align: center;
+	line-height: 40px;
+}
+
+#cart_yes_btn {
+	display: inline-block;
+	width: 130px;
+	background: white;
+	height: 40px;
+	color: hotpink;
+	font-weight: 600;
+	border: 1px solid hotpink;
+	margin-right: 20px;
+	text-align: center;
+	line-height: 40px;
+}
+
+#cart_yes_btn:hover {
+	background: hotpink;
+	color: white;
+}
+
+#cart_modal_close {
+	color: #aaaaaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+#cart_modal_close:hover, #cart_modal_close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+/* 모달 끝*/
+
+/* detail_top area */
+.option_list {
+	width: 700px;
+	height: auto;
+}
+
+#price_result_won {
+	width: auto;
+	display: inline;
+}
+
+.detail_top {
+	background-color: #FFFFFF;
+	width: auto;
+	min-height: 700px;
+	border-bottom: 2px solid #f5f5f5;
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+.detail_img {
+	margin: 10px;
+	width: 600px;
+	height: 630px;
+	float: left;
+}
+
+.detail_img>img {
+	width: 100%;
+	height: 100%;
+}
+
+.detail_info {
+	display: grid;
+	margin: 10px;
+	width: 700px;
+	height: auto;
+	background-color: #FFFFFF;
+	float: right;
+}
+
+.prod_name {
+	font-size: 45px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	color: black;
+	font-weight: bold;
+}
+
+.prod_info {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-top: 5px;
+	padding-bottom: 10px;
+	color: black;
+	border-bottom: 2px solid black;
+}
+
+.won {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: black;
+}
+
+.price_item {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: black;
+}
+
+.prod_price {
+	border-bottom: 1px solid #c0c0c0;
+}
+
+.deli_1 {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: black;
+}
+
+.deli_info {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: black;
+}
+
+.point {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: black;
+	font-weight: bold;
+	border-bottom: 1px solid #c0c0c0;
+}
+
+.selectbox {
+	margin: 10px;
+	position: relative;
+	width: 500px; /* 너비설정 */
+	border: 1px solid #999; /* 테두리 설정 */
+	z-index: 1;
+}
+
+.selectbox:before { /* 화살표 대체 */
+	content: "";
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	width: 0;
+	height: 0;
+	margin-top: -1px;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 5px solid #333;
+}
+
+.selectbox label {
+	position: absolute;
+	top: 1px; /* 위치정렬 */
+	left: 5px; /* 위치정렬 */
+	padding: .8em .5em; /* select의 여백 크기 만큼 */
+	color: #999;
+	z-index: -1; /* IE8에서 label이 위치한 곳이 클릭되지 않는 것 해결 */
+}
+
+.selectbox select {
+	width: 100%;
+	height: 40px; /* 높이 초기화 */
+	line-height: normal; /* line-height 초기화 */
+	font-family: inherit; /* 폰트 상속 */
+	padding: .8em .5em; /* 여백과 높이 결정 */
+	border: 0;
+	margin: 0px;
+	opacity: 0; /* 숨기기 */
+	filter: alpha(opacity = 0); /* IE8 숨기기 */
+	-webkit-appearance: none; /* 네이티브 외형 감추기 */
+	-moz-appearance: none;
+	appearance: none;
+}
+
+.add {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 30px;
+}
+
+.option_list a {
+	float: left;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 5px;
+}
+
+.option_list a.zeroList {
+	position: relative;
+}
+
+.option_list a.zeroList::after, .option_list a.zeroList::before {
+	content: " ";
+	display: block;
+	width: 38px;
+	height: 2px;
+	position: absolute;
+	top: 29px;
+	transform: rotate(45deg);
+	background: #000;
+}
+
+.option_list a.zeroList::after {
+	transform: rotate(135deg);
+}
+
+.opt_info {
+	padding-top: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+}
+
+.opt_sel_add div {
+	float: left;
+	height: auto;
+}
+
+.opt_sel_add {
+	padding-top: 10px;
+	padding-bottom: 45px;
+	padding-left: 10px;
+	/* border-bottom: 1px solid #c0c0c0; */
+}
+
+.option_sel {
+	margin-top: 10px;
+}
+
+/* .count_down input{
+	width:30px;
+	height:30px;
+	border: 1px solid #c0c0c0;
+}
+
+.count_up input{
+	width:30px;
+	height:30px;
+	border: 1px solid #c0c0c0;
+} */
+.count input {
+	width: 35px;
+	height: 30px;
+	text-align: center;
+}
+
+#count_text {
+	vertical-align: top;
+	width: 40px;
+	padding: 0px;
+}
+
+.right {
+	padding-left: 190px;
+}
+
+.price_result {
+	padding-left: 20px;
+}
+
+.delete input {
+	padding-left: 20px;
+	padding-top: 10px;
+}
+
+.total_price {
+	border-top: 1px solid #c0c0c0;
+	padding-left: 430px;
+}
+
+.tot {
+	font-size: 15px;
+}
+
+.tot_price, .tot_won {
+	font-weight: bold;
+	font-size: 23px;
+}
+
+.tot_price {
+	padding-left: 20px;
+}
+
+.order_btn {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 10px;
+	padding-right: 20px;
+	float: right;
+}
+
+.order {
+	background-color: #ff80c0;
+	color: #FFFFFF;
+	border: 3px solid #ff80c0;
+	font-size: 15px;
+	font-weight: bold;
+	margin: 10px;
+	padding: 25px 50px;
+}
+
+.cart {
+	background: none;
+	border: 3px solid #ff80c0;
+	color: #ff80c0;
+	display: block;
+	font-size: 15px;
+	font-weight: bold;
+	margin: 10px;
+	padding: 25px 50px;
+	position: relative;
+	text-transform: uppercase;
+	float: left;
+}
+
+.cart:hover {
+	background-color: #ff80c0;
+	color: #FFFFFF;
+}
+
+/* detail_view area */
+.detail_name, .de_info, .deli_info_name {
+	padding-top: 70px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #ff80c0;
+	border-bottom: 2px solid #ff80c0;
+	text-align: center;
+}
+
+.detail_view_img {
+	margin: auto;
+	display: table;
+	padding-top: 30px;
+}
+
+.info1 {
+	padding-top: 30px;
+	padding-bottom: 15px;
+	padding-left: 5px;
+}
+
+.de_info_n_in1 {
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+.de_info_n_in>table {
+	width: 100%;
+	border: 1px solid #444444;
+	border-collapse: collapse;
+}
+
+/* .de_info_n_in > th td{
+    border: 1px solid #444444;
+} */
+.de_info_n_in #table1 tr th, .de_info_n_in #table1 tr td {
+	border: 1px solid #444444;
+}
+
+.deli_info .deli_table .tblType1 table tr th, .deli_info .deli_table .tblType1 table tr td
+	{
+	border: 1px solid #444444;
+}
+
+.de_info_n_in {
+	padding-bottom: 30px;
+}
+
+.deli_info {
+	display: block;
+}
+
+.deli_table {
+	padding-top: 30px;
+	font-size: 15px;
+	padding-left: 200px;
+	padding-right: 200px;
+}
+
+.list_txtType1 dt {
+	padding-top: 30px;
+}
+
+.tblType1 td {
+	width: 900px;
+}
+
+.de_info_n_in #table1 tr th p {
+	float: left;
+	margin-right: 19px;
+}
+
+/* .review{
+	border-bottom: 2px solid #ff80c0;
+} */
+
+/* .review_menu_select{
+	padding-top:30px;
+	border-bottom: 2px solid #ff80c0;
+} */
+
+/* .review{
+	padding-left: 100px;
+} */
+.optionselectbox, .listselectbox, .photoselectbox, .reviewselectbox {
+	float: left;
+	padding-top: 30px;
+	/* padding-left:130px; */
+	/* border-bottom: 2px solid #ff80c0; */
+}
+
+#select_opt, #select_list {
+	margin: 5px;
+	position: relative;
+	width: 150px; /* 너비설정 */
+	height: 40px;
+	z-index: 1;
+	padding-left: 5px;
+}
+
+.sold_out span {
+	text-decoration: line-through;
+}
+
+.photo_re_btn, .review_n_tip_btn {
+	margin: 5px;
+	background-color: #FFFFFF;
+	border: 1px solid #c0c0c0;
+	width: 150px;
+	height: 40px;
+}
+
+.review_menu_select {
+	min-height: 150px;
+	border-bottom: 2px solid #ff80c0;
+	padding-top: 50px;
+}
+
+.review_wrap {
+	float: right;
+}
+
+.listInfo {
+	font-family: 'Arial';
+	line-height: 25px;
+}
+
+.reviewMark {
+	background-color: #8080ff;
+	color: #FFFFFF;
+	margin: 5px;
+	padding: 3px;
+	border: 1px solid black;
+}

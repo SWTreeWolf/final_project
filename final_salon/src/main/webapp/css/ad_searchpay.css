@@ -1,0 +1,131 @@
+
+#ad_searchpay_wrap{
+	/* margin : 20px 0 0 20px; */
+
+    position: relative;
+    margin: 30px 0 0 40px;
+	
+}
+
+#ad_searchpay_wrap > #day_button_wrap > #day_sign{
+	padding: 0;
+    margin-left: 0;
+	height : 24px;
+}
+
+#ad_searchpay-top{
+	 height: 60px;
+    border-bottom: 2px solid #cacdce;
+    margin-bottom:50px;
+}
+
+#e_form {
+	display: inline-block;
+	margin-top : 10px;
+}
+
+#e_form > #keyword{
+	display : inline-block;
+	margin : 0;
+	padding : 0;
+	vertical-align: middle;
+    height: 22px;
+} 
+
+#e_form > input[type=button]{
+	height : 23px;
+    vertical-align: middle;
+}
+
+#showPayList{
+	margin-top : 10px;	
+}
+
+#showPayList > #image_wrap{
+	text-align : center;
+}
+
+#showPayList > #image_wrap > img {
+	margin: 15px 0 15px 0;
+}
+
+#showPayList > #image_wrap > p{
+	font-size: 1.5em;
+}
+
+#showPayList > table {
+	border : 1px solid #444;
+	border-collapse : collapse;
+}
+
+#showPayList > table > thead > tr > th{
+	background-color : #0088c5;
+	color : white;
+	height : 30px;
+}
+
+#showPayList > table > tbody > tr > td{
+	width : 90px;
+	height : 65px;
+	text-align: center;
+}
+
+#showPayList > table > tbody > tr > td > a{
+	color : black;
+}
+
+#showPayList > table > tbody > tr > td > a:hover{
+	color : #4b89dc;
+}
+
+#showPayList > table > tbody > tr > td:nth-of-type(3),
+#showPayList > table > tbody > tr > td:nth-of-type(7){
+	width : 100px;
+}
+
+#showPayList > table > tbody > tr > td:nth-of-type(9),
+#showPayList > table > tbody > tr > td:nth-of-type(11){
+	width : 140px;
+}
+
+#showPayList > table > tbody > tr > td:nth-of-type(10){
+	width : 405px;
+}
+
+
+
+#showPayList > #pay_list_num{
+	margin-top : 20px;
+	text-align : center;
+}
+
+#showPayList > #pay_list_num > #prev,
+#showPayList > #pay_list_num > #next{	
+	width : 80px;
+}
+
+#showPayList > #pay_list_num > span {
+	display: inline-block;
+	width : 30px;
+	height : 30px;
+	background-color : #0088c5;
+}
+
+#showPayList > #pay_list_num > span > a {
+	color : white;
+	font-size: 1.3em;
+}
+
+#showPayList > #pay_list_num > span > p {
+	color : black;
+	font-size: 1.3em;
+} 
+
+
+#showPayList > #pay_list_num > span > a:hover {
+	color : black;
+}
+
+a {
+	text-decoration: none;
+}

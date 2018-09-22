@@ -1,0 +1,44 @@
+#container {
+	position: relative;
+	min-width: 1024px;
+	max-width: 1200px;
+	min-height: 400px;
+	margin: 0 auto;
+	padding: 20px 330px 20px 300px;
+}
+
+#line {
+	border: 2px solid #f7a2ba;
+	padding-top: 30px;
+	padding-bottom: 30px;
+}
+
+#but {
+	margin-left: 330px;
+}
+
+#btnList {
+	background-color: #f54a7e;
+	border: none;
+	color: white;
+	padding: 12px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}
+
+#btnSave {
+	background-color: #f54a7e;
+	border: none;
+	color: white;
+	padding: 12px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 2px;
+	cursor: pointer;
+}

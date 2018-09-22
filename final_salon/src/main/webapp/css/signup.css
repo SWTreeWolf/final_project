@@ -1,0 +1,522 @@
+#container {
+	position: relative;
+}
+
+#container .content{
+	min-width : 600px;
+	margin-top : 30px;
+}
+
+.joinWrap .joinCont {
+	margin-bottom: 80px;
+}
+
+.loginGroup {
+	margin: 0 auto;
+	width: 600px;
+	border: 1px solid #e5e5e5;
+	box-sizing: border-box;
+}
+
+.loginGroup .logWrite {
+	padding: 40px 50px 75px;
+}
+
+.writeTit {
+	margin-bottom: 7px;
+	font-weight: 500;
+	color: #333;
+}
+
+.h2_title{
+	line-height: 100%;
+	font-size: 36px;
+	font-weight: 500;
+	color: #222;
+}
+
+.loginGroup .logWrite .w240 {
+	width: 240px;
+}
+
+.loginGroup .logWrite .writeBirth {
+	overflow: inherit;
+}
+
+.writeBirth .birthTxt {
+	width: 240px;
+	font-size: 14px;
+	color: #999;
+}
+
+.writeBirth .birthTxt>input {
+	width: 100%;
+	height: 25px;
+	font-size: 14px;
+}
+
+.writeBirth .birthTxt .birthNum {
+	width: 31px;
+	height: 26px;
+	border: 1px solid #ccc;
+}
+
+.writeBirth .birthTxt .birthNum2 {
+	padding-left: 8.5px;
+	font-size: 16px;
+	vertical-align: sub;
+	letter-spacing: 1px;
+}
+
+.writeBirth .dec {
+	width: 18px;
+	line-height: 30px;
+	text-align: center;
+	color: #a0a0a0;
+}
+
+.writeBirth>div {
+	float: left;
+}
+
+.writeMobil {
+	position: relative;
+}
+
+.mobilBox .mobilSelect {
+	display: inline-block;
+}
+
+.mobilBox .mobilSelect #selectHp {
+	display: inline-block;
+	width: 51px;
+	height: 32px;
+}
+
+.mobilBox .telBox {
+	display: inline-block;
+	margin: 0 3px;
+}
+
+.mobilBox .select-ul {
+	display: inline-block;
+}
+
+.mobilBox .select-ul .selList {
+	width: 72px;
+	height: 32px;
+}
+
+.telBox input {
+	width: 72px;
+	height: 32px;
+	font-family: 'Arial';
+}
+
+.mobilBox .mobilBtn {
+	display: inline-block;
+}
+
+.loginGroup .logWrite .button2 .type6 {
+	min-width: 93px;
+	height: 32px;
+	line-height: 30px;
+	color: #fff;
+	background: #aaa;
+	border: 1px solid #aaa;
+}
+
+.writeMobil .mobilBox {
+	display: block;
+	height: 30px;
+}
+
+.writeMobil .mobilBox .mobilInput {
+	float: left;
+	width: 240px;
+}
+
+.writeMobil .mobilTime {
+	margin: -2px 0 10px 0;
+}
+
+.wrtieMobil .mobilTime .button2 {
+	maring-right: 2px;
+}
+
+.writeMobil .mobilBot .ico_txt {
+	margin-bottom: 5px;
+	padding-left: 16px;
+	font-size: 13px;
+	color: #999;
+	text-indent: -17px;
+}
+
+.loginGroup .logWrite .writeBirth:after {
+	display: block;
+	clear: both;
+	content: "";
+}
+
+.loginGroup .ico_txt {
+	margin-bottom: 5px;
+	padding-left: 6px;
+	font-size: 11px;
+	color: #999;
+	text-indent: -11px;
+}
+
+.loginGroup .ico_txt::before {
+	padding-right: 3px;
+	line-height: 16px;
+	content: "·";
+}
+
+.wrtieSnum {
+	position: relative;
+	overflow: hidden;
+}
+
+.writeSnum .snumImg {
+	float: left;
+	margin-right: 5px;
+	widht: 177px;
+}
+
+.writeSnum .snumBtn {
+	padding-top: 5px;
+	width: 100%;
+	display: block;
+	overflow: hidden;
+}
+
+.loginGroup .logWrite .writeSnum .snumNumInput {
+	margin-left: 20px; width : 310px;
+	float: left;
+	width: 310px;
+}
+
+.loginGroup .logBot {
+	padding: 15px 50px;
+	background: #f5f5f5;
+}
+
+.joinWrap .joinCont .btnCenter span {
+	margin: 0px 1px;
+}
+
+.pvcyRenewal {
+	margin: 25px 0;
+}
+
+.pvcyRenewal .pvcy_tt1 {
+	font-size: 14px;
+	color: #333;
+	font-weight: 500;
+	margin: 5px 0;
+}
+
+.pvcyRenewal p {
+	font-size: 13px;
+	color: #999;
+}
+
+.pvcyRenewal ul {
+	margin: 10px 0;
+}
+
+.pvcyRenewal ul li {
+	margin: 5px 0;
+	padding-left: 6px;
+	font-size: 13px;
+	color: #999;
+	text-indent: -11px;
+	display: block;
+}
+
+.pvcyRenewal ul li::before {
+	padding-right: 3px;
+	line-height: 16px;
+	content: "·";
+}
+
+.pvcyRenewal .checkForm {
+	margin: 25px 0;
+}
+
+.checkForm {
+	display: inline-block;
+	position: relative;
+	height: 20px;
+	vertical-align: middle;
+}
+
+.betweenTxt {
+	margin: 0 5px;
+	color: #999;
+}
+
+.error_txt {
+	display: block;
+	margin-top: 3px;
+	color: #f8516f;
+	font-size: 11px;
+	text-align: left;
+}
+
+.button2 {
+	display: inline-block;
+	min-width: 75px;
+	vertical-align: middle;
+}
+
+.button2 .type2 {
+	color: #666;
+	background: #fff;
+	border: 1px solid #aaa;
+	border-radius: 2px;
+	text-align: center;
+}
+
+.btnCenter {
+	margin: 10px 0;
+	text-align: center;
+}
+
+.button1, .button2, .button3, .refuse{
+	display: inline-block;
+	vertical-align: top;
+}
+
+.button1 a.large{
+	width: 150px;
+	height: 50px;
+	line-height: 48px;
+	font-size: 16px;
+}
+
+.button1 .type4, .button3 .type4, .button1 .type5, 
+.button2 .type5, .refuse .type5{
+	color: #666;
+	background: #fff;
+	border: 1px solid #aaa;
+}
+
+.button1 .type1 {
+	color: #fff;
+	background: #f54a7e;
+}
+
+img {
+	line-height: 0;
+	vertical-align: middle;
+	font-size: 0;
+	border: 0;
+}
+
+@media ( max-width :1100px) {
+	.joinWrap .joinCont {
+		margin: 0 auto 80px;
+		width: 600px;
+	}
+}
+
+/*/////////////////////////////////////////////////////////////////////////////////////
+밑에부터 detail 항목 css*/
+
+.h5_title{
+	line-height : 100%;
+	font-size : 18px;
+	font-weight: 500;
+	color : #333;
+}
+
+.borTc3{
+	border-top : 1px solid #333;
+}
+
+.joinWrap .joinCont .joinForm > ul > li{
+	padding : 12px 30px;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+.joinWrap .joinCont .joinForm ul li .questBox{
+	float : left;
+	width : 20%;
+	line-height : 40px;
+	margin-bottom : 0px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox{
+	position: relative;
+	float : right;
+	width : 78%;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox span.ansex {
+	margin : 10px 45px 10px 0px;
+	width : auto;
+	height: auto;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox span.ansex input[type='radio']{
+	/* position : absolute; */
+	width : 20px;
+	height : 30px;
+}	
+
+.joinWrap .joinCont .joinForm ul li .ansBox span.ansex label{
+	display : inline-block;
+	position : relative;
+	height : 30px;
+	line-height: 38px;
+	padding-left: 10px;
+	vertical-align: top;
+	font-size: 18px;
+	color : #666;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox span.antxt em{
+	font-family: 'Arial';
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .radioForm{
+	margin : 10px 45px 10px 0px;
+}
+
+.joinWrap .joinCont .joinForm ul li::after{
+	display: block;
+	clear : both;
+	content : "";
+}
+
+.writePoint{
+	display : inline-block;
+	width : 5px;
+	height : 5px;
+	background: url("../images/ico_point5X5.png") no-repeat 0 0px;
+}
+
+.radioForm input:checked + label{
+	color : #333;
+	background-position: 0 -80px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox input[type="text"], 
+.joinWrap .joinCont .joinForm ul li .ansBox input[type="password"],
+.joinWrap .joinCont .joinForm ul li .ansBox input[type="tel"]{
+	width : 227px;
+	height: 40px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .button1 a,
+.joinWrap .joinCont .joinForm ul li .ansBox .button2 a,
+.joinWrap .joinCont .joinForm ul li .ansBox .refuse a{
+	padding-top: 2px;
+	width: 113px;
+    height: 40px;
+    line-height: 39px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .telBox select{
+	width : 72px;
+	height : 44px;
+	padding-left: 8px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .telBox span{
+	margin : 0 10px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .telBox input{
+	width : 72px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .pwinfo{
+	position : absolute;
+	top:0;
+	left: 256px;
+	height: 40px;
+	line-height: 40px;
+	color : #999;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .mailBox{
+	position : relative;
+	width: 550px;
+	padding-bottom: 20px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .mailBox input[type="text"]:first-child{
+	width : 224px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .mailBox input[type="text"]{
+	width : 140px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .mailBox #btnSelectEmail{
+	vertical-align: top;
+	height: 40px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .addressBox input[type="text"]:first-child{
+	width : 190px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .addressBox input[type="text"]:nth-of-type(2){
+	width : 280.5px;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .addressBox .button3 a{
+	width : 114px;
+	height: 40px;
+	line-height: 38px;
+	font-size : 14px;
+	text-align: center;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox #inputBox{
+	margin-top : 10px;
+}
+
+@media ( max-width :1100px) {
+	.joinWrap .joinCont .h5_title{
+		margin-right: 10px;
+		margin-left : 0;
+	}
+	/* 수정해야 되는 부분 */
+	.joinWrap .joinCont .joinForm ul li .ansBox input[type="text"], 
+	.joinWrap .joinCont .joinForm ul li .ansBox input[type="password"]{
+		width: 227px;
+    	height: 40px;
+	}
+}
+
+/*///////////////////////////////////////////////////////
+complete
+*/
+.Test_cont{
+	margin-bottom : 50px;
+	font-size : 50px;
+	text-align: center;
+	
+}
+
+.button1 .type2{
+	color : #f54a7e;
+	background: #fff;
+	border : 1px solid #f54a7e;
+}
+
+/* ////////////////////////////// hover,focus */
+.type4:hover, .type4:focus, .type5:hover, .type5:focus {
+	color: #fff;
+	background: #aaa;
+}
+
+.joinWrap .joinCont .joinForm ul li .ansBox .type100{
+   line-height: 40px;
+}

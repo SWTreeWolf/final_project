@@ -4,6 +4,7 @@
 * HTML5, JS, Jquery
 * Mybatis 
 * JSTL, AJAX, CSS
+* SERVER : Apache-tomcat-8.5.31
 
 # 개발목표
 
